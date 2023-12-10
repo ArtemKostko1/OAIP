@@ -1,0 +1,2 @@
+# OAIP
+BSUIR algorithmization subject
