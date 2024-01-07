@@ -53,7 +53,7 @@ void printArray(const int arr[], int n) {
 }
 
 int main() {
-    setlocale(LC_ALL, "en_US.UTF-8"); //Символы русского алфавита в консоли
+    setlocale(LC_ALL, "ru_RU.UTF-8"); //Символы русского алфавита в консоли
 
     int n;
 

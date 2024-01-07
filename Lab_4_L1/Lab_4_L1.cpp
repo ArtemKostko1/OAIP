@@ -6,7 +6,7 @@
 
 int main()
 {
-    setlocale(LC_ALL, "en_US.UTF-8");
+    setlocale(LC_ALL, "ru_RU.UTF-8");
 
     int n;
 

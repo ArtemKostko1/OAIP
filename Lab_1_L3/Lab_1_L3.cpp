@@ -1,45 +1,61 @@
 ﻿#include <iostream>
+#include <sstream>
 #include <cmath>
+#include <stdexcept>
+#include <limits>
+#include <string>
+#include <locale>
 
-double calculateExpression(double x, double y, double z)
-{
-    if (x == 0 || y == 0 || z == 0)
-    {
-        throw std::runtime_error("Делить на ноль нельзя!");
+double inputNumber() {
+    double value;
+
+    std::string input;
+    while (true) {
+        std::getline(std::cin, input); // Считывание всей строки ввода и сохранение ее в переменной input
+        std::stringstream ss(input); // Создание объекта std::stringstream с именем ss. std::stringstream нужен для преобразования строк в числа и наоборот.
+
+        if (ss >> value && ss.eof()) {  // Преобразование строки input в число
+            break;
+        }
+
+        std::wcout << L"Недопустимый ввод! Пожалуйста, введите число: ";
     }
 
-    double absoluteDifference = std::abs(y - x);
-    double tangentZ = std::tan(z);
+    return value;
+}
 
-    double numerator = (std::pow(x, y) + 1) + (std::exp(y) - 1);
-    double denominator = 1 + x * std::abs(y - tangentZ * z);
-    double fraction1 = numerator / denominator;
+double getResult(double x, double y, double z) {
+    if (z == 0 || (1 + x * y) - tan(z) == 0 || y - x == 0) // Проверка исключительных ситуаций
+        throw std::invalid_argument("Недопустимые аргументы: деление на ноль или другое неопределенное поведение.");
 
-    double fraction2 = 1 + absoluteDifference;
-    double fraction3 = std::pow(absoluteDifference, 2) / 2;
-    double fraction4 = std::pow(absoluteDifference, 3) / 3;
+    double part1 = (pow(x, y + 1) + exp(y - 1)) / (1 + x * abs(y - tan(z)));
+    double part2 = 1 + abs(y - x);
+    double part3 = pow(abs(y - x), 2) / 2 - pow(abs(y - x), 3) / 3;
 
-    double h = (fraction1 * fraction2) + fraction3 - fraction4;
-
-    return h;
+    return part1 * part2 + part3;
 }
 
 int main()
 {
-    setlocale(LC_ALL, "en_US.UTF-8");
+    setlocale(LC_ALL, "ru_RU.UTF-8"); //Символы русского алфавита в консоли
 
-    double x = 2.444;
-    double y = 0.869e-2;
-    double z = -0.13e-3;
+    double x, y, z;
 
-    try
-    {
-        double result = calculateExpression(x, y, z);
-        std::wcout << L"Результат: " << result << std::endl;
+    std::wcout << L"Введите значение для x: ";
+    x = inputNumber();
+
+    std::wcout << L"Введите значение для y: ";
+    y = inputNumber();
+
+    std::wcout << L"Введите значение для z: ";
+    z = inputNumber();
+
+    try {
+        double h = getResult(x, y, z);
+        std::wcout << L"Результат значения h равно: " << h;
     }
-    catch (const std::exception& ex)
-    {
-        std::wcout << L"Произошла ошибка: " << ex.what() << std::endl;
+    catch (const std::invalid_argument& e) {
+        std::wcerr << e.what();
     }
 
     return 0;
