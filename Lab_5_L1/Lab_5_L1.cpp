@@ -2,35 +2,37 @@
 #include <limits>
 #include <string>
 
+using namespace std;
+
 // Функция для ввода значений с обработкой на целое число
 int inputInteger() {
     int value;
     bool isValidInput = false;
-    std::string input;
+    string input;
 
     while (!isValidInput) {
-        std::getline(std::cin, input);
+        getline(cin, input);
 
         // Проверка, является ли ввод пустым
         if (input.empty()) {
-            std::wcout << L"Некорректный ввод. Пожалуйста, введите целое число: ";
+            cout << "Некорректный ввод. Пожалуйста, введите целое число: ";
             continue;
         }
 
         // Проверка на наличие недопустимых символов
         // Если в строке имееются символы отличные от данных "-0123456789" возвращается true и выводится некорректный ввод
-        if (input.find_first_not_of("-0123456789") != std::string::npos) {
-            std::wcout << L"Некорректный ввод. Пожалуйста, введите целое число: ";
+        if (input.find_first_not_of("-0123456789") != string::npos) {
+            cout << "Некорректный ввод. Пожалуйста, введите целое число: ";
             continue;
         }
 
         // Попытка преобразовать строку в переменную int
         try {
-            value = std::stoi(input);
+            value = stoi(input);
             isValidInput = true;
         }
-        catch (const std::exception&) {
-            std::wcout << L"Некорректный ввод. Пожалуйста, введите целое число: ";
+        catch (const exception&) {
+            cout << "Некорректный ввод. Пожалуйста, введите целое число: ";
         }
     }
 
@@ -46,7 +48,7 @@ int inputPositive() {
         if (value > 0) {
             break;
         }
-        std::wcout << L"Некорректный ввод. Введите положительное число: ";
+        cout << "Некорректный ввод. Введите положительное число: ";
     }
 
     return value;
@@ -58,7 +60,7 @@ int** createAndFillArray(int rows, int columns) {
     for (int i = 0; i < rows; ++i) {
         array[i] = new int[columns];
         for (int j = 0; j < columns; ++j) {
-            std::wcout << L"Введите значение для элемента [" << i << L"] строки и [" << j << L"] столбца: ";
+            cout << "Введите значение для элемента [" << i << "] строки и [" << j << "] столбца: ";
             array[i][j] = inputInteger();
         }
     }
@@ -67,12 +69,12 @@ int** createAndFillArray(int rows, int columns) {
 }
 
 void printArray(int** array, int rows, int columns) {
-    std::wcout << L"Двумерный массив:" << std::endl;
+    cout << "Двумерный массив:" << endl;
     for (int i = 0; i < rows; ++i) {
         for (int j = 0; j < columns; ++j) {
-            std::wcout << array[i][j] << ' ';
+            cout << array[i][j] << ' ';
         }
-        std::wcout << std::endl;
+        cout << endl;
     }
 }
 
@@ -103,14 +105,14 @@ void deleteArray(int** array, int rows) {
 
 int main()
 {
-    setlocale(LC_ALL, "ru_RU.UTF-8"); //Символы русского алфавита в консоли
+    setlocale(LC_ALL, "ru_RU"); //Символы русского алфавита в консоли
 
     int rows, columns;
 
-    std::wcout << L"Введите количество строк: ";
+    cout << "Введите количество строк: ";
     rows = inputPositive();
 
-    std::wcout << L"Введите количество столбцов: ";
+    cout << "Введите количество столбцов: ";
     columns = inputPositive();
 
     int** array = createAndFillArray(rows, columns);
@@ -118,10 +120,10 @@ int main()
 
     int firstNonPositiveRow = findFirstNonPositiveRow(array, rows, columns);
     if (firstNonPositiveRow != -1) {
-        std::wcout << L"Первая строка без положительных элементов: " << firstNonPositiveRow << std::endl;
+        cout << "Первая строка без положительных элементов: " << firstNonPositiveRow << endl;
     }
     else {
-        std::wcout << L"Все строки содержат положительные элементы." << std::endl;
+        cout << "Все строки содержат положительные элементы." << endl;
     }
 
     deleteArray(array, rows);

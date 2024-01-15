@@ -8,19 +8,21 @@
 #include <windows.h>
 #include <iomanip>
 
+using namespace std;
+
 double inputNumber() {
     double value;
 
-    std::string input;
+    string input;
     while (true) {
-        std::getline(std::cin, input); // Считывание всей строки ввода и сохранение ее в переменной input
-        std::stringstream ss(input); // Создание объекта std::stringstream с именем ss. std::stringstream нужен для преобразования строк в числа и наоборот.
+        getline(cin, input); // Считывание всей строки ввода и сохранение ее в переменной input
+        stringstream ss(input); // Создание объекта stringstream с именем ss. stringstream нужен для преобразования строк в числа и наоборот.
 
         if (ss >> value && ss.eof()) {  // Преобразование строки input в число
             break;
         }
 
-        std::wcout << L"Недопустимый ввод! Пожалуйста, введите число: ";
+        cout << "Недопустимый ввод! Пожалуйста, введите число: ";
     }
 
     return value;
@@ -40,32 +42,32 @@ double getResultS(double x, int n) {
 
 int main()
 {
-    setlocale(LC_ALL, "Russian"); //Символы русского алфавита в консоли
+    setlocale(LC_ALL, "ru_RU"); //Символы русского алфавита в консоли
 
-    std::wcout << L"Введите значения для a: ";
+    cout << "Введите значения для a: ";
     double a = inputNumber();
 
     double b;
     do {
-        std::wcout << L"Введите значение для b (должно быть больше, чем a): ";
+        cout << "Введите значение для b (должно быть больше, чем a): ";
         b = inputNumber();
         if (b <= a) {
-            std::wcout << L"Некорректный ввод. Значение b должно быть больше, чем a. Пожалуйста, попробуйте еще раз.\n";
+            cout << "Некорректный ввод. Значение b должно быть больше, чем a. Пожалуйста, попробуйте еще раз.\n";
         }
     } while (b <= a);
 
-    std::wcout << L"Введите значения для h: ";
+    cout << "Введите значения для h: ";
     double h = inputNumber();
 
-    std::wcout << L"Введите значения для n: ";
+    cout << "Введите значения для n: ";
     double n = inputNumber();
 
-    std::cout << std::fixed << std::setprecision(4); // Вывод 4 знаков после запятой.
+    cout << fixed << setprecision(4); // Вывод 4 знаков после запятой.
 
-    std::cout << std::left << std::setw(15) << "x"
-        << std::setw(15) << "Y(x)"
-        << std::setw(15) << "S(x)"
-        << std::setw(15) << "|Y-S|"
+    cout << left << setw(15) << "x"
+        << setw(15) << "Y(x)"
+        << setw(15) << "S(x)"
+        << setw(15) << "|Y-S|"
         << "n\n";
 
     for (double x = a; x <= b; x += h) { // Цикл for, в котором x изменяется от a до b с шагом h.
@@ -77,9 +79,9 @@ int main()
             break;
         }
 
-        std::cout << std::left << std::setw(15) << x
-            << std::setw(15) << y
-            << std::setw(15) << s
+        cout << left << setw(15) << x
+            << setw(15) << y
+            << setw(15) << s
             << diff
             << "\n";
 

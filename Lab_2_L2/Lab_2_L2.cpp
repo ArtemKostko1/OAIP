@@ -7,19 +7,21 @@
 #include <string>
 #include <windows.h>
 
+using namespace std;
+
 double inputNumber() {
     double value;
 
-    std::string input;
+    string input;
     while (true) {
-        std::getline(std::cin, input); // Считывание всей строки ввода и сохранение ее в переменной input
-        std::stringstream ss(input); // Создание объекта std::stringstream с именем ss. std::stringstream нужен для преобразования строк в числа и наоборот.
+        getline(cin, input); // Считывание всей строки ввода и сохранение ее в переменной input
+        stringstream ss(input); // Создание объекта std::stringstream с именем ss. std::stringstream нужен для преобразования строк в числа и наоборот.
 
         if (ss >> value && ss.eof()) {  // Преобразование строки input в число
             break;
         }
 
-        std::wcout << L"Недопустимый ввод! Пожалуйста, введите число: ";
+        cout << "Недопустимый ввод! Пожалуйста, введите число: ";
     }
 
     return value;
@@ -34,7 +36,7 @@ double getChoice(double x, int choice) {
     case 3:
         return x / 3;
     default:
-        std::wcout << L"Ошибка: неверный выбор.";
+        cout << "Ошибка: неверный выбор.";
     }
 }
 
@@ -43,48 +45,46 @@ double getResult(double z, double a, double d, int choice) {
 
     if (z >= 0) {
         x = -3 * z;
-        std::wcout << L"Так как z >= 0, используемая функция: x = -3z\n";
+        cout << "Так как z >= 0, используемая функция: x = -3z\n";
     }
     else {
         x = pow(z, 2);
-        std::wcout << L"Так как z < 0, используемая функция: x = z^2\n";
+        cout << "Так как z < 0, используемая функция: x = z^2\n";
     }
 
-    if (x == 0) throw std::invalid_argument("Ошибка: деление на ноль недопустимо.");
+    if (x == 0) throw "Ошибка: деление на ноль недопустимо.";
 
     y = 2 * getChoice(x, choice) * (a * sin(x) + d * exp(-x - 3));
 
     if (y == INFINITY || y == -INFINITY || isnan(y))
-        throw std::overflow_error("Ошибка: результат выходит за пределы допустимых значений.");
+        throw "Ошибка: результат выходит за пределы допустимых значений.";
 
     return y;
 }
 
 int main()
 {
-    SetConsoleCP(1251);
-    SetConsoleOutputCP(1251);
-    setlocale(LC_ALL, "Russian"); //Символы русского алфавита в консоли
+    setlocale(LC_ALL, "ru_RU"); //Символы русского алфавита в консоли
 
-    std::wcout << L"Введите значение z: ";
+    cout << "Введите значение z: ";
     double z = inputNumber();
 
-    std::wcout << L"Введите значение a: ";
+    cout << "Введите значение a: ";
     double a = inputNumber();
 
-    std::wcout << L"Введите значение d: ";
+    cout << "Введите значение d: ";
     double d = inputNumber();
     
     int choice;
-    std::wcout << L"Выберите функцию для вычисления y:\n1. f(x) = 2x\n2. f(x) = x^2\n3. f(x) = x/3\nВаш выбор: ";
-    std::wcin >> choice;
+    cout << "Выберите функцию для вычисления y:\n1. f(x) = 2x\n2. f(x) = x^2\n3. f(x) = x/3\nВаш выбор: ";
+    cin >> choice;
 
     try {
         double y = getResult(z, a, d, choice);
-        std::wcout << L"Результат значения y равно: " << y;
+        cout << "Результат значения y равно: " << y;
     }
-    catch (const std::invalid_argument& e) {
-        std::wcerr << e.what();
+    catch (const char* error) {
+        cout << error << endl;
     }
 
     return 0;

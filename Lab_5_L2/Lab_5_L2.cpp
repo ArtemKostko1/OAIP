@@ -5,35 +5,37 @@
 #include <ctime>
 #include <iomanip>
 
+using namespace std;
+
 // Функция для ввода значений с обработкой на целое число
 int inputInteger() {
     int value;
     bool isValidInput = false;
-    std::string input;
+    string input;
 
     while (!isValidInput) {
-        std::getline(std::cin, input);
+        getline(cin, input);
 
         // Проверка, является ли ввод пустым
         if (input.empty()) {
-            std::wcout << L"Некорректный ввод. Пожалуйста, введите целое число: ";
+            cout << "Некорректный ввод. Пожалуйста, введите целое число: ";
             continue;
         }
 
         // Проверка на наличие недопустимых символов
         // Если в строке имееются символы отличные от данных "0123456789" возвращается true и выводится некорректный ввод
-        if (input.find_first_not_of("0123456789") != std::string::npos) {
-            std::wcout << L"Некорректный ввод. Пожалуйста, введите целое число: ";
+        if (input.find_first_not_of("0123456789") != string::npos) {
+            cout << "Некорректный ввод. Пожалуйста, введите целое число: ";
             continue;
         }
 
         // Попытка преобразовать строку в переменную int
         try {
-            value = std::stoi(input);
+            value = stoi(input);
             isValidInput = true;
         }
-        catch (const std::exception&) {
-            std::wcout << L"Некорректный ввод. Пожалуйста, введите целое число: ";
+        catch (const exception&) {
+            cout << "Некорректный ввод. Пожалуйста, введите целое число: ";
         }
     }
 
@@ -49,7 +51,7 @@ int inputPositive() {
         if (value > 0) {
             break;
         }
-        std::wcout << L"Некорректный ввод. Введите положительное число: ";
+        cout << "Некорректный ввод. Введите положительное число: ";
     }
 
     return value;
@@ -59,20 +61,20 @@ int inputPositive() {
 void printMatrix(int** matrix, int n) {
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
-            std::cout << std::setw(4) << matrix[i][j] << " ";
+            cout << setw(4) << matrix[i][j] << " ";
         }
-        std::cout << std::endl;
+        cout << endl;
     }
 }
 
 // Функция для создания и заполнения матрицы
 int** createAndFillArray(int n) {
     int** matrix = new int* [n];
-    std::srand(std::time(nullptr)); // Инициализация генератора случайных чисел
+    srand(time(nullptr)); // Инициализация генератора случайных чисел
     for (int i = 0; i < n; i++) {
         matrix[i] = new int[n];
         for (int j = 0; j < n; j++) {
-            matrix[i][j] = std::rand() % 41 - 20; // Генерация случайного числа от -20 до 20
+            matrix[i][j] = rand() % 41 - 20; // Генерация случайного числа от -20 до 20
         }
     }
 
@@ -126,22 +128,22 @@ int** removeRowAndColumn(int** matrix, int n) {
 
 int main()
 {
-    setlocale(LC_ALL, "ru_RU.UTF-8"); //Символы русского алфавита в консоли
+    setlocale(LC_ALL, "ru_RU"); //Символы русского алфавита в консоли
 
     int n;
 
-    std::wcout << L"Введите размер матрицы: ";
+    cout << "Введите размер матрицы: ";
     n = inputPositive();
 
     int** matrix = createAndFillArray(n);
 
-    std::wcout << L"Исходная матрица: " << std::endl;
+    cout << "Исходная матрица: " << endl;
     printMatrix(matrix, n);
-    std::wcout << std::endl;
+    cout << endl;
 
     int** newMatrix = removeRowAndColumn(matrix, n);
 
-    std::wcout << L"Новая матрица:" << std::endl;
+    cout << "Новая матрица:" << endl;
     printMatrix(newMatrix, n-1);
 
     // Освобождение памяти

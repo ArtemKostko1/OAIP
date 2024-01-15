@@ -3,17 +3,18 @@
 #include <ctime>
 #include <limits>
 
+using namespace std;
 
 int main()
 {
-    setlocale(LC_ALL, "ru_RU.UTF-8");
+    setlocale(LC_ALL, "ru_RU"); //Символы русского алфавита в консоли
 
     int n;
 
     while (true)
     {
-        std::wcout << L"Введите количество элементов (не более 20): ";
-        if (std::cin >> n)
+        cout << "Введите количество элементов (не более 20): ";
+        if (cin >> n)
         {
             if (n > 0 && n <= 20)
             {
@@ -21,14 +22,14 @@ int main()
             }
             else
             {
-                std::wcout << L"Недопустимое количество элементов. Введите положительное число не более 20.\n";
+                cout << "Недопустимое количество элементов. Введите положительное число не более 20.\n";
             }
         }
         else
         {
-            std::wcout << L"Ошибка ввода. Введите число.\n";
-            std::cin.clear();
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            cout << "Ошибка ввода. Введите число.\n";
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
         }
     }
 
@@ -52,8 +53,6 @@ int main()
         }
     }
 
-    std::wcout << L"Максимальный элемент: " << maxElement << std::endl;
-
     // Вычисление суммы положительных элементов до максимального элемента
     int sumPositive = 0;
     for (int i = 0; i < n; ++i)
@@ -70,14 +69,16 @@ int main()
         }
     }
 
-    std::wcout << L"Элементы массива: ";
+    cout << "Элементы массива: ";
     for (int i = 0; i < n; ++i)
     {
-        std::wcout << arr[i] << " ";
+        cout << arr[i] << " ";
     }
-    std::wcout << std::endl;
+    cout << endl;
 
-    std::wcout << L"Сумма положительных элементов до максимального элемента: " << sumPositive << std::endl;
+    cout << "Максимальный элемент: " << maxElement << endl;
+
+    cout << "Сумма положительных элементов до максимального элемента: " << sumPositive << endl;
 
 
     delete[] arr; // Освобождение памяти, выделенной для массива

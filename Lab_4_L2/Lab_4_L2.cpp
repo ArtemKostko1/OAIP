@@ -2,26 +2,28 @@
 #include <cstdlib>
 #include <ctime>
 
+using namespace std;
+
 // Функция для заполнения массива с клавиатуры
 void fillArrayWithUserInput(int arr[], int n) {
-    std::wcout << L"Введите " << n << L" элементов массива:" << std::endl;;
+    cout << "Введите " << n << " элементов массива:" << endl;;
 
     for (int i = 0; i < n; ++i) {
-        std::wcin >> arr[i];
+        cin >> arr[i];
     }
 }
 
 // Функция для заполнения массива случайными числами
 void fillArrayWithRandomNumbers(int arr[], int n) {
     srand(static_cast<unsigned int>(time(0)));
-    std::wcout << L"Массив, заполненный случайными числами:" << std::endl;
+    cout << "Массив, заполненный случайными числами:" << endl;
 
     for (int i = 0; i < n; ++i) {
         // От 0 до 99
         arr[i] = rand() % 100;
-        std::wcout << arr[i] << " ";
+        cout << arr[i] << " ";
     }
-    std::wcout << std::endl;
+    cout << endl;
 }
 
 // Функция удаления из массива нечетных чисел
@@ -44,23 +46,23 @@ void removeEvenElements(int arr[], int& n) {
 }
 
 void printArray(const int arr[], int n) {
-    std::wcout << L"Итоговый массив:\n";
+    cout << "Итоговый массив:\n";
 
     for (int i = 0; i < n; ++i) {
-        std::cout << arr[i] << " ";
+        cout << arr[i] << " ";
     }
-    std::cout << std::endl;
+    cout << endl;
 }
 
 int main() {
-    setlocale(LC_ALL, "ru_RU.UTF-8"); //Символы русского алфавита в консоли
+    setlocale(LC_ALL, "ru_RU"); //Символы русского алфавита в консоли
 
     int n;
 
     while (true)
     {
-        std::wcout << L"Введите количество элементов (не более 20): ";
-        if (std::cin >> n)
+        cout << "Введите количество элементов (не более 20): ";
+        if (cin >> n)
         {
             if (n > 0 && n <= 20)
             {
@@ -68,27 +70,27 @@ int main() {
             }
             else
             {
-                std::wcout << L"Недопустимое количество элементов. Введите положительное число не более 20.\n";
+                cout << "Недопустимое количество элементов. Введите положительное число не более 20.\n";
             }
         }
         else
         {
-            std::wcout << L"Ошибка ввода. Введите число.\n";
+            cout << "Ошибка ввода. Введите число.\n";
             // Возвращает пользователя на ввод значения при некорректном вводе
-            std::wcin.clear();
-            std::wcin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
         }
     }
 
     int* arr = new int[n]; // Динамическое выделение памяти для массива
     int choice;
 
-    std::wcout << L"Выберите способ заполнения массива (1 - ввод с клавиатуры, 2 - случайные числа): ";
+    cout << "Выберите способ заполнения массива (1 - ввод с клавиатуры, 2 - случайные числа): ";
 
-    while (!(std::cin >> choice) || (choice != 1 && choice != 2)) {
-        std::wcout << L"Некорректный выбор. Пожалуйста, введите 1 или 2: ";
-        std::wcin.clear();
-        std::wcin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    while (!(cin >> choice) || (choice != 1 && choice != 2)) {
+        cout << "Некорректный выбор. Пожалуйста, введите 1 или 2: ";
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
     }
 
     if (choice == 1) {
