@@ -29,7 +29,7 @@ double inputNumber() {
 }
 
 double getResultY(double x) {
-    return log(sqrt(1 + pow(x, 2)) + x * atan(x));
+    return -log(sqrt(1 + pow(x, 2))) + x * atan(x);
 }
 
 double getResultS(double x, int n) {
@@ -75,7 +75,8 @@ int main()
         double s = getResultS(x, n);
         double diff = fabs(y - s);
 
-        if (diff < 0.001) { // Если разница меньше 0.001, то цикл прерывается.
+        if (diff > 0.0001) { // Если разница меньше 0.001, то цикл прерывается.
+            cout << "При заданном кол - ве шагов функция с суммой не сошлась\n";
             break;
         }
 

@@ -74,7 +74,7 @@ int** createAndFillArray(int n) {
     for (int i = 0; i < n; i++) {
         matrix[i] = new int[n];
         for (int j = 0; j < n; j++) {
-            matrix[i][j] = rand() % 41 - 20; // Генерация случайного числа от -20 до 20
+            matrix[i][j] = rand() % 31 - 40; // Генерация случайного числа от -20 до 20
         }
     }
 
