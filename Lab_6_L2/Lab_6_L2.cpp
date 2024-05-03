@@ -31,6 +31,7 @@ int main()
 
     if (minIndex != -1) {
         cout << "Порядковый номер слова с минимальной длиной: " << minIndex + 1 << endl;
+        cout << "Количество сисмволов в найденном слове: " << minLength << endl;
     }
     else {
         cout << "Строка пустая." << endl;
