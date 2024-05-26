@@ -27,12 +27,18 @@
     <ClCompile Include="colorMenu.cpp">
       <Filter>Исходные файлы\menu</Filter>
     </ClCompile>
+    <ClCompile Include="skiResortMenu.cpp">
+      <Filter>Исходные файлы\menu</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="mainMenu.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="colorMenu.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="skiResortMenu.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

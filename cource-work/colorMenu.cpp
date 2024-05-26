@@ -4,7 +4,7 @@
 
 using namespace std;
 
-void showColorMenu() {
+void colorMenu() {
     int choice;
     bool exit = false;
     

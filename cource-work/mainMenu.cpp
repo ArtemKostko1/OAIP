@@ -2,10 +2,11 @@
 #include <thread>
 #include "mainMenu.h"
 #include "colorMenu.h"
+#include "skiResortMenu.h"
 
 using namespace std;
 
-void showMainMenu() {
+void mainMenu() {
     int choice;
     bool exit = false;
 
@@ -24,12 +25,12 @@ void showMainMenu() {
         switch (choice) {
             case 1:
             {
-                // ¬ход
+                skiResortMenu();
                 break;
             }
             case 2:
             {
-                showColorMenu();
+                colorMenu();
                 break;
             }
             case 3:
