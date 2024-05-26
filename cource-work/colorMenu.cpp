@@ -43,9 +43,9 @@ void showColorMenu() {
             break;
         default:
             cout << "Неверный ввод. Ожидайте..." << endl;
-            cin.clear(); // Очищаем ошибочное состояние ввода
-            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Очищаем буфер ввода
-            this_thread::sleep_for(chrono::milliseconds(2000)); // Задержка приложения, чтобы пользователь увидел сообщение об ошибке
+            cin.clear(); // Очистка ошибочного состояния ввода
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Очистка буфер ввода
+            this_thread::sleep_for(chrono::milliseconds(1500)); // Задержка приложения, чтобы пользователь увидел сообщение об ошибке
         }
     }
 }
