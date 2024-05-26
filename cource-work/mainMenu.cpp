@@ -1,7 +1,5 @@
 #include <iostream>
-#include <windows.h>
-#include <cstdlib>
-#include <ctime>
+#include <thread>
 #include "mainMenu.h"
 #include "colorMenu.h"
 
@@ -37,11 +35,10 @@ void showMainMenu() {
                 exit = true;
                 break;
             default:
-                cout << "Неверный выбор. Попробуйте снова." << endl;
-
-                // cin.clear(); // Очищаем ошибочное состояние ввода
-                // cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Очищаем буфер ввода
-                // system("pause"); // Приостанавливаем выполнение программы, чтобы пользователь мог прочитать сообщение об ошибке
+                cout << "Неверный ввод. Ожидайте..." << endl;
+                cin.clear(); // Очищаем ошибочное состояние ввода
+                cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Очищаем буфер ввода
+                this_thread::sleep_for(chrono::milliseconds(2000)); // Задержка приложения, чтобы пользователь увидел сообщение об ошибке
         }
     }
 }

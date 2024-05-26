@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "D:\\BSUIR\\\u041E\u0410\u0438\u041F\\\u0417\u0430\u0434\u0430\u043D\u0438\u044F \u0438 \u0441\u0435\u0441\u0441\u0438\u044F\\OAIP\\cource-work\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{26378B60-2970-4386-83B5-4379E79DB870}|cource-work.vcxproj|D:\\BSUIR\\\u041E\u0410\u0438\u041F\\\u0417\u0430\u0434\u0430\u043D\u0438\u044F \u0438 \u0441\u0435\u0441\u0441\u0438\u044F\\OAIP\\cource-work\\mainMenu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{26378B60-2970-4386-83B5-4379E79DB870}|cource-work.vcxproj|solutionrelative:mainMenu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{26378B60-2970-4386-83B5-4379E79DB870}|cource-work.vcxproj|D:\\BSUIR\\\u041E\u0410\u0438\u041F\\\u0417\u0430\u0434\u0430\u043D\u0438\u044F \u0438 \u0441\u0435\u0441\u0441\u0438\u044F\\OAIP\\cource-work\\cource-work.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{26378B60-2970-4386-83B5-4379E79DB870}|cource-work.vcxproj|solutionrelative:cource-work.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26378B60-2970-4386-83B5-4379E79DB870}|cource-work.vcxproj|D:\\BSUIR\\\u041E\u0410\u0438\u041F\\\u0417\u0430\u0434\u0430\u043D\u0438\u044F \u0438 \u0441\u0435\u0441\u0441\u0438\u044F\\OAIP\\cource-work\\mainMenu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{26378B60-2970-4386-83B5-4379E79DB870}|cource-work.vcxproj|solutionrelative:mainMenu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{26378B60-2970-4386-83B5-4379E79DB870}|cource-work.vcxproj|D:\\BSUIR\\\u041E\u0410\u0438\u041F\\\u0417\u0430\u0434\u0430\u043D\u0438\u044F \u0438 \u0441\u0435\u0441\u0441\u0438\u044F\\OAIP\\cource-work\\colorMenu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -27,27 +27,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "cource-work.cpp",
-              "DocumentMoniker": "D:\\BSUIR\\\u041E\u0410\u0438\u041F\\\u0417\u0430\u0434\u0430\u043D\u0438\u044F \u0438 \u0441\u0435\u0441\u0441\u0438\u044F\\OAIP\\cource-work\\cource-work.cpp",
-              "RelativeDocumentMoniker": "cource-work.cpp",
-              "ToolTip": "D:\\BSUIR\\\u041E\u0410\u0438\u041F\\\u0417\u0430\u0434\u0430\u043D\u0438\u044F \u0438 \u0441\u0435\u0441\u0441\u0438\u044F\\OAIP\\cource-work\\cource-work.cpp",
-              "RelativeToolTip": "cource-work.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-22T20:06:16.034Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "mainMenu.cpp",
               "DocumentMoniker": "D:\\BSUIR\\\u041E\u0410\u0438\u041F\\\u0417\u0430\u0434\u0430\u043D\u0438\u044F \u0438 \u0441\u0435\u0441\u0441\u0438\u044F\\OAIP\\cource-work\\mainMenu.cpp",
               "RelativeDocumentMoniker": "mainMenu.cpp",
               "ToolTip": "D:\\BSUIR\\\u041E\u0410\u0438\u041F\\\u0417\u0430\u0434\u0430\u043D\u0438\u044F \u0438 \u0441\u0435\u0441\u0441\u0438\u044F\\OAIP\\cource-work\\mainMenu.cpp",
               "RelativeToolTip": "mainMenu.cpp",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAACcAAABEAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-05-25T08:41:53.112Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "cource-work.cpp",
+              "DocumentMoniker": "D:\\BSUIR\\\u041E\u0410\u0438\u041F\\\u0417\u0430\u0434\u0430\u043D\u0438\u044F \u0438 \u0441\u0435\u0441\u0441\u0438\u044F\\OAIP\\cource-work\\cource-work.cpp",
+              "RelativeDocumentMoniker": "cource-work.cpp",
+              "ToolTip": "D:\\BSUIR\\\u041E\u0410\u0438\u041F\\\u0417\u0430\u0434\u0430\u043D\u0438\u044F \u0438 \u0441\u0435\u0441\u0441\u0438\u044F\\OAIP\\cource-work\\cource-work.cpp",
+              "RelativeToolTip": "cource-work.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-22T20:06:16.034Z",
               "EditorCaption": ""
             },
             {
@@ -58,10 +58,9 @@
               "RelativeDocumentMoniker": "colorMenu.cpp",
               "ToolTip": "D:\\BSUIR\\\u041E\u0410\u0438\u041F\\\u0417\u0430\u0434\u0430\u043D\u0438\u044F \u0438 \u0441\u0435\u0441\u0441\u0438\u044F\\OAIP\\cource-work\\colorMenu.cpp",
               "RelativeToolTip": "colorMenu.cpp",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAACEAAABHAAAA",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAABsAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-25T08:52:14.183Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-25T08:52:14.183Z"
             }
           ]
         }

@@ -1,5 +1,5 @@
 #include <iostream>
-#include <windows.h>
+#include <thread>
 #include "colorMenu.h"
 
 using namespace std;
@@ -7,7 +7,6 @@ using namespace std;
 void showColorMenu() {
     int choice;
     bool exit = false;
-    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE); // Дескриптор консоли
     
     while (!exit) {
         system("cls");
@@ -25,28 +24,28 @@ void showColorMenu() {
 
         switch (choice) {
         case 1:
-            SetConsoleTextAttribute(hConsole, 0x07); // Черный фон, белый текст
+            system("color 07"); // Черный фон, белый текст
             break;
         case 2:
-            SetConsoleTextAttribute(hConsole, 0x0A); // Черный фон, зеленый текст
+            system("color 0A"); // Черный фон, зеленый текст
             break;
         case 3:
-            SetConsoleTextAttribute(hConsole, 0x09); // Черный фон, синий текст
+            system("color 09"); // Черный фон, синий текст
             break;
         case 4:
-            SetConsoleTextAttribute(hConsole, 0x0C); // Черный фон, красный текст
+            system("color 0C"); // Черный фон, красный текст
             break;
         case 5:
-            SetConsoleTextAttribute(hConsole, 0x20); // Зеленый фон, красный текст
+            system("color 20"); // Зеленый фон, красный текст
             break;
         case 6:
             exit = true;
             break;
         default:
-            cout << "Неверный выбор. Попробуйте снова." << endl;
-            Sleep(2000);
-            system("cls");
-            break;
+            cout << "Неверный ввод. Ожидайте..." << endl;
+            cin.clear(); // Очищаем ошибочное состояние ввода
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Очищаем буфер ввода
+            this_thread::sleep_for(chrono::milliseconds(2000)); // Задержка приложения, чтобы пользователь увидел сообщение об ошибке
         }
     }
 }
