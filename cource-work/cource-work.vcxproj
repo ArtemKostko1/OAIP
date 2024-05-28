@@ -130,12 +130,16 @@
     <ClCompile Include="colorMenu.cpp" />
     <ClCompile Include="cource-work.cpp" />
     <ClCompile Include="mainMenu.cpp" />
+    <ClCompile Include="rentalKit.cpp" />
     <ClCompile Include="skiResortMenu.cpp" />
+    <ClCompile Include="visitorService.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="colorMenu.h" />
     <ClInclude Include="mainMenu.h" />
+    <ClInclude Include="RentalKit.h" />
     <ClInclude Include="skiResortMenu.h" />
+    <ClInclude Include="Visitor.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

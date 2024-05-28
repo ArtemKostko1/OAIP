@@ -16,6 +16,12 @@
     <Filter Include="Исходные файлы\menu">
       <UniqueIdentifier>{a8e0d43d-db14-4703-bfab-652133b8a58b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\classes">
+      <UniqueIdentifier>{0d1d04cc-40e9-4274-ba5a-d4e422552e6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\services">
+      <UniqueIdentifier>{fcc9201f-6a14-45a6-af37-f5178b0d48ef}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cource-work.cpp">
@@ -30,6 +36,12 @@
     <ClCompile Include="skiResortMenu.cpp">
       <Filter>Исходные файлы\menu</Filter>
     </ClCompile>
+    <ClCompile Include="rentalKit.cpp">
+      <Filter>Исходные файлы\classes</Filter>
+    </ClCompile>
+    <ClCompile Include="visitorService.cpp">
+      <Filter>Исходные файлы\services</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="mainMenu.h">
@@ -39,6 +51,12 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="skiResortMenu.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Visitor.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="RentalKit.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

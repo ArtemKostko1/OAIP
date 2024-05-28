@@ -3,16 +3,24 @@
   "WorkspaceRootPath": "D:\\BSUIR\\\u041E\u0410\u0438\u041F\\\u0417\u0430\u0434\u0430\u043D\u0438\u044F \u0438 \u0441\u0435\u0441\u0441\u0438\u044F\\OAIP\\cource-work\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{26378B60-2970-4386-83B5-4379E79DB870}|cource-work.vcxproj|D:\\BSUIR\\\u041E\u0410\u0438\u041F\\\u0417\u0430\u0434\u0430\u043D\u0438\u044F \u0438 \u0441\u0435\u0441\u0441\u0438\u044F\\OAIP\\cource-work\\cource-work.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{26378B60-2970-4386-83B5-4379E79DB870}|cource-work.vcxproj|solutionrelative:cource-work.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{26378B60-2970-4386-83B5-4379E79DB870}|cource-work.vcxproj|D:\\BSUIR\\\u041E\u0410\u0438\u041F\\\u0417\u0430\u0434\u0430\u043D\u0438\u044F \u0438 \u0441\u0435\u0441\u0441\u0438\u044F\\OAIP\\cource-work\\skiResortMenu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{26378B60-2970-4386-83B5-4379E79DB870}|cource-work.vcxproj|solutionrelative:skiResortMenu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{26378B60-2970-4386-83B5-4379E79DB870}|cource-work.vcxproj|D:\\BSUIR\\\u041E\u0410\u0438\u041F\\\u0417\u0430\u0434\u0430\u043D\u0438\u044F \u0438 \u0441\u0435\u0441\u0441\u0438\u044F\\OAIP\\cource-work\\colorMenu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{26378B60-2970-4386-83B5-4379E79DB870}|cource-work.vcxproj|solutionrelative:colorMenu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{26378B60-2970-4386-83B5-4379E79DB870}|cource-work.vcxproj|D:\\BSUIR\\\u041E\u0410\u0438\u041F\\\u0417\u0430\u0434\u0430\u043D\u0438\u044F \u0438 \u0441\u0435\u0441\u0441\u0438\u044F\\OAIP\\cource-work\\visitorService.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{26378B60-2970-4386-83B5-4379E79DB870}|cource-work.vcxproj|solutionrelative:visitorService.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{26378B60-2970-4386-83B5-4379E79DB870}|cource-work.vcxproj|D:\\BSUIR\\\u041E\u0410\u0438\u041F\\\u0417\u0430\u0434\u0430\u043D\u0438\u044F \u0438 \u0441\u0435\u0441\u0441\u0438\u044F\\OAIP\\cource-work\\mainMenu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{26378B60-2970-4386-83B5-4379E79DB870}|cource-work.vcxproj|solutionrelative:mainMenu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{26378B60-2970-4386-83B5-4379E79DB870}|cource-work.vcxproj|D:\\BSUIR\\\u041E\u0410\u0438\u041F\\\u0417\u0430\u0434\u0430\u043D\u0438\u044F \u0438 \u0441\u0435\u0441\u0441\u0438\u044F\\OAIP\\cource-work\\RentalKit.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{26378B60-2970-4386-83B5-4379E79DB870}|cource-work.vcxproj|solutionrelative:RentalKit.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26378B60-2970-4386-83B5-4379E79DB870}|cource-work.vcxproj|D:\\BSUIR\\\u041E\u0410\u0438\u041F\\\u0417\u0430\u0434\u0430\u043D\u0438\u044F \u0438 \u0441\u0435\u0441\u0441\u0438\u044F\\OAIP\\cource-work\\RentalKit.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{26378B60-2970-4386-83B5-4379E79DB870}|cource-work.vcxproj|solutionrelative:RentalKit.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26378B60-2970-4386-83B5-4379E79DB870}|cource-work.vcxproj|D:\\BSUIR\\\u041E\u0410\u0438\u041F\\\u0417\u0430\u0434\u0430\u043D\u0438\u044F \u0438 \u0441\u0435\u0441\u0441\u0438\u044F\\OAIP\\cource-work\\Visitor.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{26378B60-2970-4386-83B5-4379E79DB870}|cource-work.vcxproj|solutionrelative:Visitor.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,40 +35,66 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "cource-work.cpp",
-              "DocumentMoniker": "D:\\BSUIR\\\u041E\u0410\u0438\u041F\\\u0417\u0430\u0434\u0430\u043D\u0438\u044F \u0438 \u0441\u0435\u0441\u0441\u0438\u044F\\OAIP\\cource-work\\cource-work.cpp",
-              "RelativeDocumentMoniker": "cource-work.cpp",
-              "ToolTip": "D:\\BSUIR\\\u041E\u0410\u0438\u041F\\\u0417\u0430\u0434\u0430\u043D\u0438\u044F \u0438 \u0441\u0435\u0441\u0441\u0438\u044F\\OAIP\\cource-work\\cource-work.cpp",
-              "RelativeToolTip": "cource-work.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAABAAAA",
+              "Title": "skiResortMenu.cpp",
+              "DocumentMoniker": "D:\\BSUIR\\\u041E\u0410\u0438\u041F\\\u0417\u0430\u0434\u0430\u043D\u0438\u044F \u0438 \u0441\u0435\u0441\u0441\u0438\u044F\\OAIP\\cource-work\\skiResortMenu.cpp",
+              "RelativeDocumentMoniker": "skiResortMenu.cpp",
+              "ToolTip": "D:\\BSUIR\\\u041E\u0410\u0438\u041F\\\u0417\u0430\u0434\u0430\u043D\u0438\u044F \u0438 \u0441\u0435\u0441\u0441\u0438\u044F\\OAIP\\cource-work\\skiResortMenu.cpp",
+              "RelativeToolTip": "skiResortMenu.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-22T20:06:16.034Z",
+              "WhenOpened": "2024-05-26T22:41:30.132Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "mainMenu.cpp",
-              "DocumentMoniker": "D:\\BSUIR\\\u041E\u0410\u0438\u041F\\\u0417\u0430\u0434\u0430\u043D\u0438\u044F \u0438 \u0441\u0435\u0441\u0441\u0438\u044F\\OAIP\\cource-work\\mainMenu.cpp",
-              "RelativeDocumentMoniker": "mainMenu.cpp",
-              "ToolTip": "D:\\BSUIR\\\u041E\u0410\u0438\u041F\\\u0417\u0430\u0434\u0430\u043D\u0438\u044F \u0438 \u0441\u0435\u0441\u0441\u0438\u044F\\OAIP\\cource-work\\mainMenu.cpp",
-              "RelativeToolTip": "mainMenu.cpp",
-              "ViewState": "AQIAACIAAAAAAAAAAAAvwDsAAABIAAAA",
+              "Title": "RentalKit.h",
+              "DocumentMoniker": "D:\\BSUIR\\\u041E\u0410\u0438\u041F\\\u0417\u0430\u0434\u0430\u043D\u0438\u044F \u0438 \u0441\u0435\u0441\u0441\u0438\u044F\\OAIP\\cource-work\\RentalKit.h",
+              "RelativeDocumentMoniker": "RentalKit.h",
+              "ToolTip": "D:\\BSUIR\\\u041E\u0410\u0438\u041F\\\u0417\u0430\u0434\u0430\u043D\u0438\u044F \u0438 \u0441\u0435\u0441\u0441\u0438\u044F\\OAIP\\cource-work\\RentalKit.h",
+              "RelativeToolTip": "RentalKit.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-05-27T20:07:14.316Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "rentalKit.cpp",
+              "DocumentMoniker": "D:\\BSUIR\\\u041E\u0410\u0438\u041F\\\u0417\u0430\u0434\u0430\u043D\u0438\u044F \u0438 \u0441\u0435\u0441\u0441\u0438\u044F\\OAIP\\cource-work\\rentalKit.cpp",
+              "RelativeDocumentMoniker": "rentalKit.cpp",
+              "ToolTip": "D:\\BSUIR\\\u041E\u0410\u0438\u041F\\\u0417\u0430\u0434\u0430\u043D\u0438\u044F \u0438 \u0441\u0435\u0441\u0441\u0438\u044F\\OAIP\\cource-work\\rentalKit.cpp",
+              "RelativeToolTip": "rentalKit.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-25T08:41:53.112Z",
+              "WhenOpened": "2024-05-27T20:28:05.793Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Visitor.h",
+              "DocumentMoniker": "D:\\BSUIR\\\u041E\u0410\u0438\u041F\\\u0417\u0430\u0434\u0430\u043D\u0438\u044F \u0438 \u0441\u0435\u0441\u0441\u0438\u044F\\OAIP\\cource-work\\Visitor.h",
+              "RelativeDocumentMoniker": "Visitor.h",
+              "ToolTip": "D:\\BSUIR\\\u041E\u0410\u0438\u041F\\\u0417\u0430\u0434\u0430\u043D\u0438\u044F \u0438 \u0441\u0435\u0441\u0441\u0438\u044F\\OAIP\\cource-work\\Visitor.h",
+              "RelativeToolTip": "Visitor.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-05-27T19:18:42.971Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "colorMenu.cpp",
-              "DocumentMoniker": "D:\\BSUIR\\\u041E\u0410\u0438\u041F\\\u0417\u0430\u0434\u0430\u043D\u0438\u044F \u0438 \u0441\u0435\u0441\u0441\u0438\u044F\\OAIP\\cource-work\\colorMenu.cpp",
-              "RelativeDocumentMoniker": "colorMenu.cpp",
-              "ToolTip": "D:\\BSUIR\\\u041E\u0410\u0438\u041F\\\u0417\u0430\u0434\u0430\u043D\u0438\u044F \u0438 \u0441\u0435\u0441\u0441\u0438\u044F\\OAIP\\cource-work\\colorMenu.cpp",
-              "RelativeToolTip": "colorMenu.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC8AAAA8AAAA",
+              "Title": "visitorService.cpp",
+              "DocumentMoniker": "D:\\BSUIR\\\u041E\u0410\u0438\u041F\\\u0417\u0430\u0434\u0430\u043D\u0438\u044F \u0438 \u0441\u0435\u0441\u0441\u0438\u044F\\OAIP\\cource-work\\visitorService.cpp",
+              "RelativeDocumentMoniker": "visitorService.cpp",
+              "ToolTip": "D:\\BSUIR\\\u041E\u0410\u0438\u041F\\\u0417\u0430\u0434\u0430\u043D\u0438\u044F \u0438 \u0441\u0435\u0441\u0441\u0438\u044F\\OAIP\\cource-work\\visitorService.cpp",
+              "RelativeToolTip": "visitorService.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-26T15:14:08.651Z",
+              "WhenOpened": "2024-05-27T21:28:53.697Z",
               "EditorCaption": ""
             }
           ]
