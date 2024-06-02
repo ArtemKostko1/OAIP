@@ -1,28 +1,29 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include <ctime>
 
 using namespace std;
 
-class Visitor
+struct Visitor
 {
-	public:
-		string name;
-		string documentNumber;
+public:
+	string name;
+	float height;
+	float weight;
+	float footSize;
+	string documentNumber;
+	string phoneNumber;
+	string rentalKit;
+	string rentalTime;
+	time_t rentalPeriodStart;
+	time_t rentalPeriodEnd;
 
-		Visitor() {
+	//void createVisitor(string, float, float, float, string, string, string, int, time_t, time_t);
 
-		}
+	void editVisitor();
 
-		string GetName();
-		void printName();
+	void deleteVisitor();
 
-		string GetDocumentNumber();
-		void printDocumentNumber();
-
-		void SetName();
-		void SetDocumentNumber();
-
-		void addVisitor();
+	string toString();
 };
-

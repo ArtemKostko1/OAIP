@@ -65,6 +65,7 @@ void mainMenu() {
             }
             case 4:
             {
+                // Запись в файл списка структуры
                 exit = true;
                 break;
             }
