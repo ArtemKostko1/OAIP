@@ -22,6 +22,15 @@
     <Filter Include="Исходные файлы\structure">
       <UniqueIdentifier>{0d1d04cc-40e9-4274-ba5a-d4e422552e6d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Файлы заголовков\menu">
+      <UniqueIdentifier>{ba2dea5b-1207-4a42-a15e-69028e23147b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\structures">
+      <UniqueIdentifier>{ab8094d7-1140-439d-a3b3-2c5998e9816b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\services">
+      <UniqueIdentifier>{e8918d9e-8b73-439d-8045-f0c7ac06abf5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="mainMenu.cpp">
@@ -39,19 +48,33 @@
     <ClCompile Include="visitorService.cpp">
       <Filter>Исходные файлы\structure</Filter>
     </ClCompile>
+    <ClCompile Include="fileService.cpp">
+      <Filter>Исходные файлы\services</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="mainMenu.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="colorMenu.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Файлы заголовков\menu</Filter>
+    </ClInclude>
+    <ClInclude Include="mainMenu.h">
+      <Filter>Файлы заголовков\menu</Filter>
     </ClInclude>
     <ClInclude Include="skiResortMenu.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Файлы заголовков\menu</Filter>
     </ClInclude>
     <ClInclude Include="Visitor.h">
+      <Filter>Файлы заголовков\structures</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="fileService.h">
+      <Filter>Файлы заголовков\services</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="cource-work.rc">
+      <Filter>Файлы ресурсов</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>
