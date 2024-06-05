@@ -51,6 +51,9 @@
     <ClCompile Include="fileService.cpp">
       <Filter>Исходные файлы\services</Filter>
     </ClCompile>
+    <ClCompile Include="vectorService.cpp">
+      <Filter>Исходные файлы\services</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="colorMenu.h">
@@ -69,6 +72,9 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="fileService.h">
+      <Filter>Файлы заголовков\services</Filter>
+    </ClInclude>
+    <ClInclude Include="vectorService.h">
       <Filter>Файлы заголовков\services</Filter>
     </ClInclude>
   </ItemGroup>

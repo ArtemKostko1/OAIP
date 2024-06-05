@@ -66,6 +66,7 @@ void mainMenu() {
             }
             case 4:
             {
+
                 writeVisitorsToFile();
                 exit = true;
                 break;
