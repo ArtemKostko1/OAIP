@@ -1,6 +1,6 @@
 #include <iostream>
 #include <thread>
-#include "Visitor.h"
+#include "visitor.h"
 #include "skiResortMenu.h"
 
 using namespace std;

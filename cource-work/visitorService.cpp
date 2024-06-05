@@ -1,5 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS
-#include "Visitor.h"
+#include "visitor.h"
 #include <ctime>
 
 //void Visitor::createVisitor(

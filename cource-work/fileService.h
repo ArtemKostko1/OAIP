@@ -1,7 +1,14 @@
 #pragma once
+#include <vector>
+#include <string>
+#include "visitor.h"
 #ifndef FILE_SERVICE
 #define FILE_SERVICE
 
-void openFile();
+using namespace std;
+
+vector<Visitor> readVisitorsFromFile(const string& fileName);
+
+void writeVisitorsToFile(const vector<Visitor>& visitors);
 
 #endif

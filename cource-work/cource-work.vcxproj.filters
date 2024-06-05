@@ -62,7 +62,7 @@
     <ClInclude Include="skiResortMenu.h">
       <Filter>Файлы заголовков\menu</Filter>
     </ClInclude>
-    <ClInclude Include="Visitor.h">
+    <ClInclude Include="visitor.h">
       <Filter>Файлы заголовков\structures</Filter>
     </ClInclude>
     <ClInclude Include="resource.h">

@@ -3,6 +3,7 @@
 #include "mainMenu.h"
 #include "colorMenu.h"
 #include "skiResortMenu.h"
+#include "fileService.h"
 
 using namespace std;
 
@@ -65,7 +66,7 @@ void mainMenu() {
             }
             case 4:
             {
-                // Запись в файл списка структуры
+                writeVisitorsToFile();
                 exit = true;
                 break;
             }

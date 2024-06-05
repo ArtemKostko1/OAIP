@@ -1,2 +1,9 @@
-﻿  visitorService.cpp
-  cource-work.vcxproj -> D:\BSUIR\ОАиП\Задания и сессия\OAIP\cource-work\x64\Debug\cource-work.exe
+﻿  fileService.cpp
+  mainMenu.cpp
+D:\BSUIR\ОАиП\Задания и сессия\OAIP\cource-work\mainMenu.cpp(69,17): error C2660: writeVisitorsToFile: функция не принимает 0 аргументов
+  D:\BSUIR\ОАиП\Задания и сессия\OAIP\cource-work\fileService.h(12,6):
+   см. объявление "writeVisitorsToFile"
+  D:\BSUIR\ОАиП\Задания и сессия\OAIP\cource-work\mainMenu.cpp(69,17):
+  при попытке сопоставить список аргументов "()"
+  
+  Создание кода...

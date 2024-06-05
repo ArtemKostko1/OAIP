@@ -140,7 +140,7 @@
     <ClInclude Include="mainMenu.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="skiResortMenu.h" />
-    <ClInclude Include="Visitor.h" />
+    <ClInclude Include="visitor.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="cource-work.rc" />
