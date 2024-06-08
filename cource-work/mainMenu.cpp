@@ -1,13 +1,17 @@
 #include <iostream>
 #include <thread>
+#include <vector>
+#include "visitor.h"
 #include "mainMenu.h"
 #include "colorMenu.h"
 #include "skiResortMenu.h"
 #include "fileService.h"
+#include "vectorService.h"
 
 using namespace std;
 
 void mainMenu() {
+    vector<Visitor> visitors;
     int choice;
     bool exit = false;
 
@@ -66,8 +70,9 @@ void mainMenu() {
             }
             case 4:
             {
+                visitors = getAllVisitors(); // Получаем список всех посетителей
+                writeVisitorsToFile(visitors);
 
-                writeVisitorsToFile();
                 exit = true;
                 break;
             }

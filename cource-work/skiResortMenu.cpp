@@ -2,12 +2,14 @@
 #include <thread>
 #include "visitor.h"
 #include "skiResortMenu.h"
+#include "vectorService.h"
 
 using namespace std;
 
 void skiResortMenu() {
 	// Использовать вектор
 	Visitor visitor;
+	vector<Visitor> visitors;
 	int choice;
 	bool exit = false;
 
@@ -59,6 +61,9 @@ void skiResortMenu() {
 
 			cout << "Выберите время аренды (1 - 2ч, 2 - 4ч, 3 - 6ч, 4 - весь день): ";
 			cin >> visitor.rentalTime;
+
+			visitors = getAllVisitors(); // Получаем список всех посетителей
+			addVisitor(visitors, visitor);
 
 			// Добавление нового посетителя в список структуры
 

@@ -20,6 +20,6 @@ void addVisitor(vector<Visitor>& visitors, const Visitor& newVisitor);
 void editVisitorByDocumentNumber(vector<Visitor>& visitors, const string& documentNumber, const Visitor& updatedVisitor);
 
 // Функция для удаления элемента по ключу documentNumber
-void removeVisitorByDocumentNumber(vector<Visitor>& visitors, const string& documentNumber);
+//void removeVisitorByDocumentNumber(vector<Visitor>& visitors, const string& documentNumber);
 
 #endif

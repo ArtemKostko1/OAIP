@@ -5,11 +5,11 @@
 #include "visitor.h"
 
 // Статический вектор для хранения всех объектов Visitor
-static vector<Visitor> allVisitors;
+static vector<Visitor> globalVisitors;
 
 // Функция для возврата списка всех объектов типа Visitor
 vector<Visitor> getAllVisitors() {
-    return allVisitors;
+    return globalVisitors;
 }
 
 // Функция для вывода на консоль всех элементов списка
@@ -36,10 +36,10 @@ void editVisitorByDocumentNumber(vector<Visitor>& visitors, const string& docume
 }
 
 // Функция для удаления элемента по ключу documentNumber
-void removeVisitorByDocumentNumber(vector<Visitor>& visitors, const string& documentNumber) {
-    visitors.erase(remove_if(visitors.begin(), visitors.end(),
-        documentNumber{
-            return visitor.documentNumber == documentNumber;
-        }),
-        visitors.end());
-}
+//void removeVisitorByDocumentNumber(vector<Visitor>& visitors, const string& documentNumber) {
+//    visitors.erase(remove_if(visitors.begin(), visitors.end(),
+//        documentNumber{
+//            return visitor.documentNumber == documentNumber;
+//        },
+//        visitors.end());
+//}

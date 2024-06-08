@@ -7,7 +7,7 @@
 
 using namespace std;
 
-vector<Visitor> readVisitorsFromFile(const string& fileName);
+vector<Visitor> readVisitorsFromFile();
 
 void writeVisitorsToFile(const vector<Visitor>& visitors);
 
