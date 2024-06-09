@@ -14,7 +14,7 @@ void setAllVisitors(const vector<Visitor>& visitors);
 vector<Visitor>& getAllVisitors();
 
 // Функция для вывода на консоль всех элементов списка
-void printVisitorList(const vector<Visitor>& visitors);
+void printVisitorList();
 
 // Функция для добавления нового элемента в список
 void addVisitor(const Visitor& newVisitor);

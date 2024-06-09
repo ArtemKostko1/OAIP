@@ -4,6 +4,9 @@
 #include <vector>
 #include <string>
 #include <ctime>
+#include <iostream>
+#include <sstream>
+#include <iomanip>
 #include "fileService.h"
 #include "vectorService.h"
 #include "visitor.h"
@@ -31,12 +34,26 @@ void readVisitorsFromFile() {
             getline(inputFile, visitor.phoneNumber);
             getline(inputFile, visitor.rentalKit);
             inputFile >> visitor.rentalTime;
-            inputFile >> visitor.rentalPeriodStart;
-            inputFile >> visitor.rentalPeriodEnd;
             inputFile.ignore(); // Игнорируем символ новой строки
 
+            // Считывание полей rentalPeriodStart и rentalPeriodEnd и преобразование их в тип time_t
+            string timeString;
+            tm timeinfo = {};
+            istringstream ss;
+            
+            getline(inputFile, timeString);
+            ss.str(timeString);
+            ss >> get_time(&timeinfo, "%d.%m.%Y %H:%M:%S");
+            visitor.rentalPeriodStart = mktime(&timeinfo);
+
+            getline(inputFile, timeString);
+            ss.clear();
+            ss.str(timeString);
+            ss >> get_time(&timeinfo, "%d.%m.%Y %H:%M:%S");
+            visitor.rentalPeriodEnd = mktime(&timeinfo);
+
             string delimiter;
-            getline(inputFile, delimiter); // Считываем разделитель ""
+            getline(inputFile, delimiter); // Считываем разделитель "***"
             if (delimiter == "***") {
                 addVisitor(visitor);
             }
@@ -75,17 +92,17 @@ void writeVisitorsToFile() {
             << visitor.rentalKit << endl
             << visitor.rentalTime << endl;
 
-            // Преобразование и запись времени начала аренды
-            tm* start_tm = localtime(&visitor.rentalPeriodStart);
-            char start_buffer[6];
-            strftime(start_buffer, sizeof(start_buffer), "%H:%M", start_tm);
-            outputFile << start_buffer << endl;
+            // Преобразование и запись в файл полей rentalPeriodStart и rentalPeriodEnd
+            char buffer[80];
+            struct tm* timeinfo;
 
-            // Преобразование и запись времени окончания аренды
-            tm* end_tm = localtime(&visitor.rentalPeriodEnd);
-            char end_buffer[6];
-            strftime(end_buffer, sizeof(end_buffer), "%H:%M", end_tm);
-            outputFile << end_buffer << endl;
+            timeinfo = localtime(&visitor.rentalPeriodStart);
+            strftime(buffer, 80, "%d.%m.%Y %H:%M:%S", timeinfo);
+            outputFile << buffer << endl;
+
+            timeinfo = localtime(&visitor.rentalPeriodEnd);
+            strftime(buffer, 80, "%d.%m.%Y %H:%M:%S", timeinfo);
+            outputFile << buffer << endl;
 
             outputFile  << "***" << endl; // Разделитель
         }

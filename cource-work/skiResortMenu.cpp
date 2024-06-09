@@ -1,20 +1,106 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <thread>
 #include <chrono>
+#include <ctime>
+#include <iostream>
 #include "visitor.h"
 #include "skiResortMenu.h"
 #include "vectorService.h"
 
 using namespace std;
 
-void skiResortMenu() {
-	// Использовать вектор
+void fillingNewVisitor() {
+	system("cls");
 	Visitor visitor;
-	vector<Visitor> visitors;
+
+	cout << "Введите имя: ";
+	cin >> visitor.name;
+
+	cout << "Введите рост: ";
+	cin >> visitor.height;
+
+	cout << "Введите вес: ";
+	cin >> visitor.weight;
+
+	cout << "Введите размер обуви: ";
+	cin >> visitor.footSize;
+
+	cout << "Введите номер документа: ";
+	cin >> visitor.documentNumber;
+
+	cout << "Введите номер телефона: ";
+	cin >> visitor.phoneNumber;
+
+	int rentalKitChoice;
+	cout << "Выберите тип оборудования (1 - Лыжный комплект, 2 - Комплект для сноуборда): ";
+	cin >> rentalKitChoice;
+	if (rentalKitChoice == 1) {
+		visitor.rentalKit = "Лыжный комплект";
+	}
+	else if (rentalKitChoice == 2) {
+		visitor.rentalKit = "Комплект для сноуборда";
+	}
+
+	cout << "Выберите время аренды (1 - 2ч, 2 - 4ч, 3 - 6ч, 4 - весь день): ";
+	int rentalTimeChoice;
+	cin >> rentalTimeChoice;
+
+	if (rentalTimeChoice == 1) {
+		visitor.rentalTime = 2;
+	}
+	else if (rentalTimeChoice == 2) {
+		visitor.rentalTime = 4;
+	}
+	else if (rentalTimeChoice == 3) {
+		visitor.rentalTime = 6;
+	}
+	else if (rentalTimeChoice == 4) {
+		visitor.rentalTime = 10;
+	}
+	else {
+		cout << "Неверный выбор. Пожалуйста, выберите 1, 2, 3 или 4.";
+	}
+
+	auto timeNow = chrono::system_clock::now();
+	time_t timeNow_t = chrono::system_clock::to_time_t(timeNow);
+	tm* timeNowInfo = localtime(&timeNow_t);
+
+	if ((timeNowInfo->tm_hour >= 22) || (timeNowInfo->tm_hour < 12)) {
+		// Если текущее время с 22:00:00 до 23.59.59, то поле visitor.rentalPeriodStart устанавливает значение в 12:00:00 следующего дня
+		if ((timeNowInfo->tm_hour >= 22) || (timeNowInfo->tm_hour < 0)) {
+			timeNowInfo->tm_mday += 1; // Переходим на следующий день
+		}
+		// Устанавливаем время в 12:00:00
+		timeNowInfo->tm_hour = 12;
+		timeNowInfo->tm_min = 0;
+		timeNowInfo->tm_sec = 0;
+
+		visitor.rentalPeriodStart = mktime(timeNowInfo); // Преобразуем обратно в time_t
+	}
+	else {
+		visitor.rentalPeriodStart = timeNow_t;
+	}
+
+	time_t rentalPeriodEndTemp = visitor.rentalPeriodStart + (visitor.rentalTime * 3600);
+	// Получаем текущее время в формате struct tm
+	struct tm* rpeTimeInfo = localtime(&rentalPeriodEndTemp);
+	// Если время больше или равно 22:00
+	if ((rpeTimeInfo->tm_hour >= 22) || (rpeTimeInfo->tm_hour < 12)) {
+		rpeTimeInfo->tm_hour = 22;
+		rpeTimeInfo->tm_min = 0;
+		rpeTimeInfo->tm_sec = 0;
+	}
+
+	// Преобразуем обратно в time_t, сохраняя дату, но изменяя время
+	visitor.rentalPeriodEnd = mktime(rpeTimeInfo);
+
+	addVisitor(visitor);
+}
+
+void skiResortMenu() {
 	int choice;
 	bool exit = false;
-	int secondsToAdd = 3600;
-	chrono::system_clock::time_point timeNow;
 
 	while (!exit) {
 		system("cls");
@@ -32,64 +118,7 @@ void skiResortMenu() {
 
 		switch (choice) {
 		case 1:
-			system("cls");
-
-			cout << "Введите имя: ";
-			cin >> visitor.name;
-
-			cout << "Введите рост: ";
-			cin >> visitor.height;
-
-			cout << "Введите вес: ";
-			cin >> visitor.weight;
-
-			cout << "Введите размер обуви: ";
-			cin >> visitor.footSize;
-
-			cout << "Введите номер документа: ";
-			cin >> visitor.documentNumber;
-
-			cout << "Введите номер телефона: ";
-			cin >> visitor.phoneNumber;
-
-			int rentalKitChoice;
-			cout << "Выберите тип оборудования (1 - Лыжный комплект, 2 - Комплект для сноуборда): ";
-			cin >> rentalKitChoice;
-			if (rentalKitChoice == 1) {
-				visitor.rentalKit = "Лыжный комплект";
-			}
-			else if (rentalKitChoice == 2) {
-				visitor.rentalKit = "Комплект для сноуборда";
-			}
-
-			cout << "Выберите время аренды (1 - 2ч, 2 - 4ч, 3 - 6ч, 4 - весь день): ";
-			int rentalTimeChoice;
-			cin >> rentalTimeChoice;
-			
-			if (rentalTimeChoice == 1) {
-				visitor.rentalTime = 2;
-			}
-			else if (rentalTimeChoice == 2) {
-				visitor.rentalTime = 4;
-			}
-			else if (rentalTimeChoice == 3) {
-				visitor.rentalTime = 6;
-			}
-			else if (rentalTimeChoice == 4) {
-				visitor.rentalTime = 10;
-			}
-			else {
-				cout << "Неверный выбор. Пожалуйста, выберите 1, 2, 3 или 4.";
-			}
-
-			timeNow = chrono::system_clock::now();
-			visitor.rentalPeriodStart = chrono::system_clock::to_time_t(timeNow);
-
-			visitor.rentalPeriodEnd = visitor.rentalPeriodStart + (visitor.rentalTime * secondsToAdd);
-
-			addVisitor(visitor);
-
-			// Добавление нового посетителя в список структуры
+			fillingNewVisitor();
 
 			break;
 		case 2:
@@ -101,7 +130,8 @@ void skiResortMenu() {
 
 			break;
 		case 4:
-			cout << visitor.toString();
+			printVisitorList();
+
 			break;
 		case 6:
 			exit = true;

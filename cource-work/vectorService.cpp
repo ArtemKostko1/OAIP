@@ -18,10 +18,10 @@ vector<Visitor>& getAllVisitors() {
 }
 
 // Функция для вывода на консоль всех элементов списка
-void printVisitorList(const vector<Visitor>& visitors) {
-    for (const auto& visitor : visitors) {
-        cout << "Name: " << visitor.name << ", Document: " << visitor.documentNumber << endl;
-        // Выводите остальные поля по аналогии
+void printVisitorList() {
+    Visitor visitor;
+    for (const auto& visitorItem : globalVisitors) {
+        cout << visitor.toString() << endl;
     }
 }
 
