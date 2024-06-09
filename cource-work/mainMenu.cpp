@@ -70,8 +70,7 @@ void mainMenu() {
             }
             case 4:
             {
-                visitors = getAllVisitors(); // Получаем список всех посетителей
-                writeVisitorsToFile(visitors);
+                writeVisitorsToFile();
 
                 exit = true;
                 break;

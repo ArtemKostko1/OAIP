@@ -10,7 +10,7 @@ int main()
 	setlocale(LC_ALL, "ru_RU"); //Символы русского алфавита в консоли
 
 	// Считывание данных из файла
-	vector<Visitor> visitors = readVisitorsFromFile();
+	readVisitorsFromFile();
 
 	// Вызов главного меню
 	mainMenu();

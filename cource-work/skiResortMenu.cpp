@@ -62,8 +62,7 @@ void skiResortMenu() {
 			cout << "¬ыберите врем€ аренды (1 - 2ч, 2 - 4ч, 3 - 6ч, 4 - весь день): ";
 			cin >> visitor.rentalTime;
 
-			visitors = getAllVisitors(); // ѕолучаем список всех посетителей
-			addVisitor(visitors, visitor);
+			addVisitor(visitor);
 
 			// ƒобавление нового посетител€ в список структуры
 

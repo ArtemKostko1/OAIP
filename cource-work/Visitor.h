@@ -21,9 +21,9 @@ public:
 
 	//void createVisitor(string, float, float, float, string, string, string, int, time_t, time_t);
 
-	void editVisitor();
+	//void editVisitor();
 
-	void deleteVisitor();
+	//void deleteVisitor();
 
 	string toString();
 };

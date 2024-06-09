@@ -1,9 +1,89 @@
 ﻿  fileService.cpp
-  mainMenu.cpp
-D:\BSUIR\ОАиП\Задания и сессия\OAIP\cource-work\mainMenu.cpp(69,17): error C2660: writeVisitorsToFile: функция не принимает 0 аргументов
-  D:\BSUIR\ОАиП\Задания и сессия\OAIP\cource-work\fileService.h(12,6):
-   см. объявление "writeVisitorsToFile"
-  D:\BSUIR\ОАиП\Задания и сессия\OAIP\cource-work\mainMenu.cpp(69,17):
-  при попытке сопоставить список аргументов "()"
+D:\BSUIR\ОАиП\Задания и сессия\OAIP\cource-work\fileService.cpp(39,21): error C2665: "std::vector<Visitor,std::allocator<Visitor>>::push_back": ни одна перегруженная функция не может преобразовать все типы аргументов
+  D:\Programms\Visual Studio Community\VC\Tools\MSVC\14.39.33519\include\vector(874,23):
+  может быть "void std::vector<Visitor,std::allocator<Visitor>>::push_back(_Ty &&)"
+          with
+          [
+              _Ty=Visitor
+          ]
+  	D:\BSUIR\ОАиП\Задания и сессия\OAIP\cource-work\fileService.cpp(39,21):
+  	"void std::vector<Visitor,std::allocator<Visitor>>::push_back(_Ty &&)": невозможно преобразовать аргумент 1 из "std::vector<Visitor,std::allocator<Visitor>>" в "_Ty &&"
+          with
+          [
+              _Ty=Visitor
+          ]
+  		D:\BSUIR\ОАиП\Задания и сессия\OAIP\cource-work\fileService.cpp(39,32):
+  		Причина: невозможно преобразовать "std::vector<Visitor,std::allocator<Visitor>>" в "_Ty"
+          with
+          [
+              _Ty=Visitor
+          ]
+  		D:\BSUIR\ОАиП\Задания и сессия\OAIP\cource-work\fileService.cpp(39,32):
+  		Для выполнения данного преобразования нет доступного оператора преобразования, определенного пользователем, или вызов оператора невозможен
+  D:\Programms\Visual Studio Community\VC\Tools\MSVC\14.39.33519\include\vector(870,23):
+  или       "void std::vector<Visitor,std::allocator<Visitor>>::push_back(const _Ty &)"
+          with
+          [
+              _Ty=Visitor
+          ]
+  	D:\BSUIR\ОАиП\Задания и сессия\OAIP\cource-work\fileService.cpp(39,21):
+  	"void std::vector<Visitor,std::allocator<Visitor>>::push_back(const _Ty &)": невозможно преобразовать аргумент 1 из "std::vector<Visitor,std::allocator<Visitor>>" в "const _Ty &"
+          with
+          [
+              _Ty=Visitor
+          ]
+  		D:\BSUIR\ОАиП\Задания и сессия\OAIP\cource-work\fileService.cpp(39,32):
+  		Причина: невозможно преобразовать "std::vector<Visitor,std::allocator<Visitor>>" в "const _Ty"
+          with
+          [
+              _Ty=Visitor
+          ]
+  		D:\BSUIR\ОАиП\Задания и сессия\OAIP\cource-work\fileService.cpp(39,32):
+  		Для выполнения данного преобразования нет доступного оператора преобразования, определенного пользователем, или вызов оператора невозможен
+  D:\BSUIR\ОАиП\Задания и сессия\OAIP\cource-work\fileService.cpp(39,21):
+  при попытке сопоставить список аргументов "(std::vector<Visitor,std::allocator<Visitor>>)"
   
-  Создание кода...
+D:\BSUIR\ОАиП\Задания и сессия\OAIP\cource-work\fileService.cpp(43,20): error C2665: "std::vector<Visitor,std::allocator<Visitor>>::push_back": ни одна перегруженная функция не может преобразовать все типы аргументов
+  D:\Programms\Visual Studio Community\VC\Tools\MSVC\14.39.33519\include\vector(874,23):
+  может быть "void std::vector<Visitor,std::allocator<Visitor>>::push_back(_Ty &&)"
+          with
+          [
+              _Ty=Visitor
+          ]
+  	D:\BSUIR\ОАиП\Задания и сессия\OAIP\cource-work\fileService.cpp(43,20):
+  	"void std::vector<Visitor,std::allocator<Visitor>>::push_back(_Ty &&)": невозможно преобразовать аргумент 1 из "std::string" в "_Ty &&"
+          with
+          [
+              _Ty=Visitor
+          ]
+  		D:\BSUIR\ОАиП\Задания и сессия\OAIP\cource-work\fileService.cpp(43,31):
+  		Причина: невозможно преобразовать "std::string" в "_Ty"
+          with
+          [
+              _Ty=Visitor
+          ]
+  		D:\BSUIR\ОАиП\Задания и сессия\OAIP\cource-work\fileService.cpp(43,31):
+  		Для выполнения данного преобразования нет доступного оператора преобразования, определенного пользователем, или вызов оператора невозможен
+  D:\Programms\Visual Studio Community\VC\Tools\MSVC\14.39.33519\include\vector(870,23):
+  или       "void std::vector<Visitor,std::allocator<Visitor>>::push_back(const _Ty &)"
+          with
+          [
+              _Ty=Visitor
+          ]
+  	D:\BSUIR\ОАиП\Задания и сессия\OAIP\cource-work\fileService.cpp(43,20):
+  	"void std::vector<Visitor,std::allocator<Visitor>>::push_back(const _Ty &)": невозможно преобразовать аргумент 1 из "std::string" в "const _Ty &"
+          with
+          [
+              _Ty=Visitor
+          ]
+  		D:\BSUIR\ОАиП\Задания и сессия\OAIP\cource-work\fileService.cpp(43,31):
+  		Причина: невозможно преобразовать "std::string" в "const _Ty"
+          with
+          [
+              _Ty=Visitor
+          ]
+  		D:\BSUIR\ОАиП\Задания и сессия\OAIP\cource-work\fileService.cpp(43,31):
+  		Для выполнения данного преобразования нет доступного оператора преобразования, определенного пользователем, или вызов оператора невозможен
+  D:\BSUIR\ОАиП\Задания и сессия\OAIP\cource-work\fileService.cpp(43,20):
+  при попытке сопоставить список аргументов "(std::string)"
+  

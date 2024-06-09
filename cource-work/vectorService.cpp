@@ -7,8 +7,13 @@
 // Статический вектор для хранения всех объектов Visitor
 static vector<Visitor> globalVisitors;
 
+// Функция для установки списка всех посетителей
+void setAllVisitors(const vector<Visitor>& visitors) {
+    globalVisitors = visitors;
+}
+
 // Функция для возврата списка всех объектов типа Visitor
-vector<Visitor> getAllVisitors() {
+vector<Visitor>& getAllVisitors() {
     return globalVisitors;
 }
 
@@ -21,8 +26,8 @@ void printVisitorList(const vector<Visitor>& visitors) {
 }
 
 // Функция для добавления нового элемента в список
-void addVisitor(vector<Visitor>& visitors, const Visitor& newVisitor) {
-    visitors.push_back(newVisitor);
+void addVisitor(const Visitor& newVisitor) {
+    globalVisitors.push_back(newVisitor);
 }
 
 // Функция для редактирования элемента по ключу documentNumber

@@ -7,8 +7,8 @@
 
 using namespace std;
 
-vector<Visitor> readVisitorsFromFile();
+void readVisitorsFromFile();
 
-void writeVisitorsToFile(const vector<Visitor>& visitors);
+void writeVisitorsToFile();
 
 #endif

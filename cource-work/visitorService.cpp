@@ -25,14 +25,14 @@
 //	this->rentalPeriodEnd = this->rentalPeriodStart + (rentalTime * 3600);
 //}
 
-void Visitor::editVisitor()
-{
-
-}
-
-void Visitor::deleteVisitor() {
-
-}
+//void Visitor::editVisitor()
+//{
+//
+//}
+//
+//void Visitor::deleteVisitor() {
+//
+//}
 
 string Visitor::toString() {
 	return "Èìÿ: " + this->name + "\n" +

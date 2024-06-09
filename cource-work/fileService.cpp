@@ -4,43 +4,54 @@
 #include <string>
 #include <ctime>
 #include "fileService.h"
+#include "vectorService.h"
 #include "visitor.h"
 
 using namespace std;
 
 const string fileName = "visitorsList.txt";
 
-// Функция для считывания данных из файла и создания списка Visitor
-vector<Visitor> readVisitorsFromFile() {
+// Функция для считывания данных из файла
+void readVisitorsFromFile() {
 	vector<Visitor> visitors;
 	ifstream inputFile(fileName);
 
+    // Проверка существования файла
     if (!inputFile.is_open()) {
-        ofstream newFile(fileName);
-        if (newFile.is_open()) {
-            newFile.close();
+
+        ofstream createdFile(fileName);
+        if (!createdFile) {
+            cerr << "Ошибка при создании файла: " << fileName << endl;
         }
-        else {
-            cerr << "Error creating file: " << fileName << endl;
-            return visitors; // Возвращание пустого списока
-        }
-    }
-    else {
-        Visitor visitor;
-        while (inputFile >> visitor.name >> visitor.height >> visitor.weight
-            >> visitor.footSize >> visitor.documentNumber >> visitor.phoneNumber
-            >> visitor.rentalKit >> visitor.rentalTime
-            >> visitor.rentalPeriodStart >> visitor.rentalPeriodEnd) {
-            visitors.push_back(visitor);
-        }
-        inputFile.close();
+        createdFile.close();
+        setAllVisitors(visitors);
     }
 
-    return visitors;
+    string line;
+    Visitor element;
+    while (getline(inputFile, line)) {
+        if (line == "{") {
+            // Начало нового элемента
+            element.clear();
+        }
+        else if (line == "}") {
+            // Конец текущего элемента
+            visitors.push_back(element);
+        }
+        else {
+            // Добавление поля в текущий элемент
+            element.push_back(line);
+        }
+    }
+    inputFile.close();
+
+    setAllVisitors(visitors);
 }
 
 // Функция для записи данных в файл
-void writeVisitorsToFile(const vector<Visitor>& visitors) {
+void writeVisitorsToFile() {
+    vector<Visitor>& visitors = getAllVisitors();
+
     ofstream outputFile(fileName);
     if (outputFile.is_open()) {
         for (const auto& visitor : visitors) {
