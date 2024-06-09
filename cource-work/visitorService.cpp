@@ -41,7 +41,7 @@ string Visitor::toString() {
 		"Размер обуви: " + to_string(this->footSize) + "\n" +
 		"Номер документа: " + this->documentNumber + "\n" +
 		"Тип арендуемого оборудования: " + this->rentalKit + "\n" +
-		"Время аренды: " + this->rentalTime + "\n" +
+		"Время аренды: " + to_string(this->rentalTime) + "\n" +
 		"Время начала аренды: " + ctime(&this->rentalPeriodStart) +
 		"Время окончания аренды: " + ctime(&this->rentalPeriodEnd);
 }

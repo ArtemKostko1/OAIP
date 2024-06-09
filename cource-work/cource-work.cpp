@@ -7,7 +7,8 @@ using namespace std;
 
 int main()
 {
-	setlocale(LC_ALL, "ru_RU"); //Символы русского алфавита в консоли
+	//setlocale(LC_ALL, "ru_RU"); //Символы русского алфавита в консоли
+	system("CHCP 1251");
 
 	// Считывание данных из файла
 	readVisitorsFromFile();

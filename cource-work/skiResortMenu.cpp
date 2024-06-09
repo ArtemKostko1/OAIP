@@ -1,5 +1,6 @@
 #include <iostream>
 #include <thread>
+#include <chrono>
 #include "visitor.h"
 #include "skiResortMenu.h"
 #include "vectorService.h"
@@ -12,6 +13,8 @@ void skiResortMenu() {
 	vector<Visitor> visitors;
 	int choice;
 	bool exit = false;
+	int secondsToAdd = 3600;
+	chrono::system_clock::time_point timeNow;
 
 	while (!exit) {
 		system("cls");
@@ -60,7 +63,29 @@ void skiResortMenu() {
 			}
 
 			cout << "Выберите время аренды (1 - 2ч, 2 - 4ч, 3 - 6ч, 4 - весь день): ";
-			cin >> visitor.rentalTime;
+			int rentalTimeChoice;
+			cin >> rentalTimeChoice;
+			
+			if (rentalTimeChoice == 1) {
+				visitor.rentalTime = 2;
+			}
+			else if (rentalTimeChoice == 2) {
+				visitor.rentalTime = 4;
+			}
+			else if (rentalTimeChoice == 3) {
+				visitor.rentalTime = 6;
+			}
+			else if (rentalTimeChoice == 4) {
+				visitor.rentalTime = 10;
+			}
+			else {
+				cout << "Неверный выбор. Пожалуйста, выберите 1, 2, 3 или 4.";
+			}
+
+			timeNow = chrono::system_clock::now();
+			visitor.rentalPeriodStart = chrono::system_clock::to_time_t(timeNow);
+
+			visitor.rentalPeriodEnd = visitor.rentalPeriodStart + (visitor.rentalTime * secondsToAdd);
 
 			addVisitor(visitor);
 

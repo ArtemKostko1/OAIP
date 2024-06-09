@@ -15,7 +15,7 @@ public:
 	string documentNumber;
 	string phoneNumber;
 	string rentalKit;
-	string rentalTime;
+	int rentalTime;
 	time_t rentalPeriodStart;
 	time_t rentalPeriodEnd;
 
