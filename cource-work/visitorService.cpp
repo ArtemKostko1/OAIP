@@ -1,47 +1,40 @@
 #define _CRT_SECURE_NO_WARNINGS
-#include "visitor.h"
+#include <iomanip>
 #include <ctime>
+#include <sstream>
+#include "visitor.h"
 
-//void Visitor::createVisitor(
-//	string name,
-//	float height,
-//	float weight,
-//	float footSize,
-//	string documentNumber, 
-//	string phoneNumber, 
-//	string rentalKit,
-//	int rentalTime,
-//	time_t rentalPeriodStart,
-//	time_t rentalPeriodEnd)
-//{
-//	this->name = name;
-//	this->height = height;
-//	this->weight = weight;
-//	this->footSize = footSize;
-//	this->documentNumber = documentNumber;
-//	this->rentalKit = rentalKit;
-//	this->rentalTime = rentalTime;
-//	time(&this->rentalPeriodStart);
-//	this->rentalPeriodEnd = this->rentalPeriodStart + (rentalTime * 3600);
-//}
+string Visitor::toString() const {
+	char prsBuffer[80];
+	char rpeBuffer[80];
+	struct tm* rpsTimeInfo;
+	struct tm* rpeTimeInfo;
 
-//void Visitor::editVisitor()
-//{
-//
-//}
-//
-//void Visitor::deleteVisitor() {
-//
-//}
+	rpsTimeInfo = localtime(&this->rentalPeriodStart);
+	strftime(prsBuffer, 80, "%d.%m.%Y %H:%M:%S", rpsTimeInfo);
 
-string Visitor::toString() {
+	rpeTimeInfo = localtime(&this->rentalPeriodEnd);
+	strftime(rpeBuffer, 80, "%d.%m.%Y %H:%M:%S", rpeTimeInfo);
+
+	stringstream ssHeight;
+	ssHeight << fixed << setprecision(1) << this->height;
+	string heightStr = ssHeight.str();
+
+	stringstream ssWeight;
+	ssWeight << fixed << setprecision(1) << this->weight;
+	string weightStr = ssWeight.str();
+
+	stringstream ssFootSize;
+	ssFootSize << fixed << setprecision(1) << this->footSize;
+	string footSizeStr = ssFootSize.str();
+
 	return "Имя: " + this->name + "\n" +
-		"Рост: " + to_string(this->height) + "\n" +
-		"Вес: " + to_string(this->weight) + "\n" +
-		"Размер обуви: " + to_string(this->footSize) + "\n" +
+		"Рост: " + heightStr + " см \n" +
+		"Вес: " + weightStr + " кг \n" +
+		"Размер обуви: " + footSizeStr + "\n" +
 		"Номер документа: " + this->documentNumber + "\n" +
 		"Тип арендуемого оборудования: " + this->rentalKit + "\n" +
-		"Время аренды: " + to_string(this->rentalTime) + "\n" +
-		"Время начала аренды: " + ctime(&this->rentalPeriodStart) +
-		"Время окончания аренды: " + ctime(&this->rentalPeriodEnd);
+		"Время аренды: " + to_string(this->rentalTime) + " часа/ов \n" +
+		"Время начала аренды: " + string(prsBuffer) + "\n" +
+		"Время окончания аренды: " + string(rpeBuffer);
 }

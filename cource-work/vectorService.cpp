@@ -19,9 +19,8 @@ vector<Visitor>& getAllVisitors() {
 
 // Функция для вывода на консоль всех элементов списка
 void printVisitorList() {
-    Visitor visitor;
     for (const auto& visitorItem : globalVisitors) {
-        cout << visitor.toString() << endl;
+        cout << visitorItem.toString() << "\n" << endl;
     }
 }
 

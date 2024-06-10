@@ -19,5 +19,5 @@ public:
 	time_t rentalPeriodStart;
 	time_t rentalPeriodEnd;
 
-	string toString();
+	string toString() const;
 };

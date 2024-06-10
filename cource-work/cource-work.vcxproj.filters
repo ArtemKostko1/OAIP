@@ -25,11 +25,14 @@
     <Filter Include="Файлы заголовков\menu">
       <UniqueIdentifier>{ba2dea5b-1207-4a42-a15e-69028e23147b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Файлы заголовков\structures">
-      <UniqueIdentifier>{ab8094d7-1140-439d-a3b3-2c5998e9816b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Файлы заголовков\services">
       <UniqueIdentifier>{e8918d9e-8b73-439d-8045-f0c7ac06abf5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\menu\utils">
+      <UniqueIdentifier>{2ae1d67e-567e-4a60-a5d7-c87b8e4ad60a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\menu\utils\skiResortMenuUtils">
+      <UniqueIdentifier>{fc0720b2-cbc5-4780-bcf0-e178c9666d7b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -54,6 +57,9 @@
     <ClCompile Include="vectorService.cpp">
       <Filter>Исходные файлы\services</Filter>
     </ClCompile>
+    <ClCompile Include="skiResortMenuUtils.cpp">
+      <Filter>Исходные файлы\menu\utils\skiResortMenuUtils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="colorMenu.h">
@@ -65,9 +71,6 @@
     <ClInclude Include="skiResortMenu.h">
       <Filter>Файлы заголовков\menu</Filter>
     </ClInclude>
-    <ClInclude Include="visitor.h">
-      <Filter>Файлы заголовков\structures</Filter>
-    </ClInclude>
     <ClInclude Include="resource.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
@@ -76,6 +79,12 @@
     </ClInclude>
     <ClInclude Include="vectorService.h">
       <Filter>Файлы заголовков\services</Filter>
+    </ClInclude>
+    <ClInclude Include="skiResortMenuUtils.h">
+      <Filter>Исходные файлы\menu\utils\skiResortMenuUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="visitor.h">
+      <Filter>Исходные файлы\structure</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

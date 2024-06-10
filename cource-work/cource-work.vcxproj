@@ -132,6 +132,7 @@
     <ClCompile Include="fileService.cpp" />
     <ClCompile Include="mainMenu.cpp" />
     <ClCompile Include="skiResortMenu.cpp" />
+    <ClCompile Include="skiResortMenuUtils.cpp" />
     <ClCompile Include="vectorService.cpp" />
     <ClCompile Include="visitorService.cpp" />
   </ItemGroup>
@@ -141,6 +142,7 @@
     <ClInclude Include="mainMenu.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="skiResortMenu.h" />
+    <ClInclude Include="skiResortMenuUtils.h" />
     <ClInclude Include="vectorService.h" />
     <ClInclude Include="visitor.h" />
   </ItemGroup>
