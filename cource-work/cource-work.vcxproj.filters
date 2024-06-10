@@ -22,69 +22,78 @@
     <Filter Include="Исходные файлы\structure">
       <UniqueIdentifier>{0d1d04cc-40e9-4274-ba5a-d4e422552e6d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Файлы заголовков\menu">
-      <UniqueIdentifier>{ba2dea5b-1207-4a42-a15e-69028e23147b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Файлы заголовков\services">
-      <UniqueIdentifier>{e8918d9e-8b73-439d-8045-f0c7ac06abf5}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Исходные файлы\menu\utils">
       <UniqueIdentifier>{2ae1d67e-567e-4a60-a5d7-c87b8e4ad60a}</UniqueIdentifier>
     </Filter>
     <Filter Include="Исходные файлы\menu\utils\skiResortMenuUtils">
       <UniqueIdentifier>{fc0720b2-cbc5-4780-bcf0-e178c9666d7b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\menu\colorMenu">
+      <UniqueIdentifier>{acb50e00-780a-43d9-95a2-3bdf9173ea4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\menu\mainMenu">
+      <UniqueIdentifier>{98f3a92e-df1b-487b-835e-43d8c4c5f543}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\menu\skiResortMenu">
+      <UniqueIdentifier>{09009125-8390-4890-a2c3-d6903bee2c02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\services\fileService">
+      <UniqueIdentifier>{ec7af9f3-e64a-419d-a768-db3f78ecdcb8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\services\vectorService">
+      <UniqueIdentifier>{e9efdb23-bd5f-4334-9732-d41301e142be}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="mainMenu.cpp">
-      <Filter>Исходные файлы\menu</Filter>
-    </ClCompile>
-    <ClCompile Include="colorMenu.cpp">
-      <Filter>Исходные файлы\menu</Filter>
-    </ClCompile>
-    <ClCompile Include="skiResortMenu.cpp">
-      <Filter>Исходные файлы\menu</Filter>
-    </ClCompile>
     <ClCompile Include="cource-work.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="visitorService.cpp">
       <Filter>Исходные файлы\structure</Filter>
     </ClCompile>
-    <ClCompile Include="fileService.cpp">
-      <Filter>Исходные файлы\services</Filter>
-    </ClCompile>
-    <ClCompile Include="vectorService.cpp">
-      <Filter>Исходные файлы\services</Filter>
-    </ClCompile>
     <ClCompile Include="skiResortMenuUtils.cpp">
       <Filter>Исходные файлы\menu\utils\skiResortMenuUtils</Filter>
     </ClCompile>
+    <ClCompile Include="colorMenu.cpp">
+      <Filter>Исходные файлы\menu\colorMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="mainMenu.cpp">
+      <Filter>Исходные файлы\menu\mainMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="skiResortMenu.cpp">
+      <Filter>Исходные файлы\menu\skiResortMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="fileService.cpp">
+      <Filter>Исходные файлы\services\fileService</Filter>
+    </ClCompile>
+    <ClCompile Include="vectorService.cpp">
+      <Filter>Исходные файлы\services\vectorService</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="colorMenu.h">
-      <Filter>Файлы заголовков\menu</Filter>
-    </ClInclude>
-    <ClInclude Include="mainMenu.h">
-      <Filter>Файлы заголовков\menu</Filter>
-    </ClInclude>
-    <ClInclude Include="skiResortMenu.h">
-      <Filter>Файлы заголовков\menu</Filter>
-    </ClInclude>
     <ClInclude Include="resource.h">
       <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="fileService.h">
-      <Filter>Файлы заголовков\services</Filter>
-    </ClInclude>
-    <ClInclude Include="vectorService.h">
-      <Filter>Файлы заголовков\services</Filter>
     </ClInclude>
     <ClInclude Include="skiResortMenuUtils.h">
       <Filter>Исходные файлы\menu\utils\skiResortMenuUtils</Filter>
     </ClInclude>
     <ClInclude Include="visitor.h">
       <Filter>Исходные файлы\structure</Filter>
+    </ClInclude>
+    <ClInclude Include="colorMenu.h">
+      <Filter>Исходные файлы\menu\colorMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="mainMenu.h">
+      <Filter>Исходные файлы\menu\mainMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="skiResortMenu.h">
+      <Filter>Исходные файлы\menu\skiResortMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="fileService.h">
+      <Filter>Исходные файлы\services\fileService</Filter>
+    </ClInclude>
+    <ClInclude Include="vectorService.h">
+      <Filter>Исходные файлы\services\vectorService</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
