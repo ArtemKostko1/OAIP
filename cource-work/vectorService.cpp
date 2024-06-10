@@ -17,6 +17,16 @@ vector<Visitor>& getAllVisitors() {
     return globalVisitors;
 }
 
+// Функция для получения элемента по номеру документа
+Visitor& getVisitorByDocumentNumber(const string& documentNumber) {
+    for (Visitor& visitor : globalVisitors) {
+        if (visitor.documentNumber == documentNumber) {
+            return visitor;
+        }
+    }
+    throw std::invalid_argument("Посетитель с данным номером документа не найден");
+}
+
 // Функция для вывода на консоль всех элементов списка
 void printVisitorList() {
     for (const auto& visitorItem : globalVisitors) {

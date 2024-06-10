@@ -5,6 +5,8 @@
 
 using namespace std;
 
+string checkDocumentNumber();
+
 string fillingRentalKit();
 
 int fillingRentalTime();

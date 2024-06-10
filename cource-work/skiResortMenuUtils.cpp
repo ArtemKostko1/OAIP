@@ -8,6 +8,24 @@
 
 using namespace std;
 
+string checkDocumentNumber() {
+	string documentNumber;
+	bool exit;
+	do {
+		exit = false;
+		cin >> documentNumber;
+		try {
+			getVisitorByDocumentNumber(documentNumber);
+			exit = true;
+			cout << "Посетитель уже существует. Пожалуйста, введите номер документа ещё раз: ";
+		}
+		catch (std::invalid_argument& e) {
+			// Посетитель с данным номером документа не найден, поэтому выходим из цикла
+		}
+	} while (exit);
+	return documentNumber;
+}
+
 string fillingRentalKit() {
 	int rentalKitChoice;
 	cin >> rentalKitChoice;
@@ -90,17 +108,17 @@ void fillingNewVisitor() {
 	cout << "Введите имя: ";
 	cin >> visitor.name;
 
-	cout << "Введите рост: ";
+	cout << "Введите рост (см): ";
 	cin >> visitor.height;
 
-	cout << "Введите вес: ";
+	cout << "Введите вес (кг): ";
 	cin >> visitor.weight;
 
-	cout << "Введите размер обуви: ";
+	cout << "Введите размер обуви (EU): ";
 	cin >> visitor.footSize;
 
 	cout << "Введите номер документа: ";
-	cin >> visitor.documentNumber;
+	visitor.documentNumber = checkDocumentNumber();
 
 	cout << "Введите номер телефона: ";
 	cin >> visitor.phoneNumber;
