@@ -17,6 +17,8 @@ time_t checkRentalPeriodEnd(int& rentalTime, time_t& rentalPeriodStart);
 
 void fillingNewVisitor();
 
+void deleteVisitor();
+
 void displayVisitors();
 
 #endif

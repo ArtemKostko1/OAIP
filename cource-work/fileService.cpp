@@ -25,16 +25,18 @@ void readVisitorsFromFile() {
         while (!inputFile.eof()) {
             Visitor visitor;
 
+            inputFile >> visitor.id;
+            inputFile.ignore(); // »гнорирование символа новой строки
             getline(inputFile, visitor.name);
             inputFile >> visitor.height;
             inputFile >> visitor.weight;
             inputFile >> visitor.footSize;
-            inputFile.ignore(); // »гнорируем символ новой строки
+            inputFile.ignore();
             getline(inputFile, visitor.documentNumber);
             getline(inputFile, visitor.phoneNumber);
             getline(inputFile, visitor.rentalKit);
             inputFile >> visitor.rentalTime;
-            inputFile.ignore(); // »гнорируем символ новой строки
+            inputFile.ignore();
 
             // —читывание полей rentalPeriodStart и rentalPeriodEnd и преобразование их в тип time_t
             string timeString;
@@ -55,7 +57,7 @@ void readVisitorsFromFile() {
             string delimiter;
             getline(inputFile, delimiter); // —читываем разделитель "***"
             if (delimiter == "***") {
-                addVisitor(visitor);
+                visitors.push_back(visitor);
             }
             else {
                 cerr << "Invalid file format." << endl;
@@ -63,7 +65,7 @@ void readVisitorsFromFile() {
             }
         }
         inputFile.close();
-
+        setAllVisitors(visitors);
     }
     else {
         ofstream createdFile(fileName);
@@ -83,6 +85,7 @@ void writeVisitorsToFile() {
     if (outputFile.is_open()) {
         for (const auto& visitor : visitors) {
             outputFile
+            << visitor.id << endl
             << visitor.name << endl
             << visitor.height << endl
             << visitor.weight << endl

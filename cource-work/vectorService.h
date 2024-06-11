@@ -20,12 +20,12 @@ Visitor& getVisitorByDocumentNumber(const string& documentNumber);
 void printVisitorList();
 
 // Функция для добавления нового элемента в список
-void addVisitor(const Visitor& newVisitor);
+void addVisitor(Visitor& newVisitor);
 
 // Функция для редактирования элемента по ключу documentNumber
-void editVisitorByDocumentNumber(vector<Visitor>& visitors, const string& documentNumber, const Visitor& updatedVisitor);
+void editVisitorByDocumentNumber(const int& visitorId, const Visitor& updatedVisitor);
 
 // Функция для удаления элемента по ключу documentNumber
-//void removeVisitorByDocumentNumber(vector<Visitor>& visitors, const string& documentNumber);
+void removeVisitorByDocumentNumber(const int& visitorId);
 
 #endif

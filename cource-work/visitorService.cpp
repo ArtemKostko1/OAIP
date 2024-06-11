@@ -28,7 +28,9 @@ string Visitor::toString() const {
 	ssFootSize << fixed << setprecision(1) << this->footSize;
 	string footSizeStr = ssFootSize.str();
 
-	return "Имя: " + this->name + "\n" +
+	return 
+		"ID: " + to_string(this->id) + "\n" +
+		"Имя: " + this->name + "\n" +
 		"Рост: " + heightStr + " см \n" +
 		"Вес: " + weightStr + " кг \n" +
 		"Размер обуви: " + footSizeStr + "\n" +

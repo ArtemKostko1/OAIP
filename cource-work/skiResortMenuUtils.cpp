@@ -136,6 +136,14 @@ void fillingNewVisitor() {
 	addVisitor(visitor);
 }
 
+void deleteVisitor() {
+	system("cls");
+	int visitorId;
+	cout << "Введите номер документа посетителя, которого хотите удалить: ";
+	cin >> visitorId;
+	removeVisitorByDocumentNumber(visitorId);
+}
+
 void displayVisitors() {
 	bool visitorListExit = false;
 	while (!visitorListExit)

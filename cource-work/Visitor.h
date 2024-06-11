@@ -8,6 +8,7 @@ using namespace std;
 struct Visitor
 {
 public:
+	int id;
 	string name;
 	float height;
 	float weight;
