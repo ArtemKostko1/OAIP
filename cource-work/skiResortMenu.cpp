@@ -33,7 +33,7 @@ void skiResortMenu() {
 				break;
 			}
 			case 2:
-				// Редактирование элемента списка структуры
+				updateVisitor();
 
 				break;
 			case 3:

@@ -22,10 +22,10 @@ void printVisitorList();
 // Функция для добавления нового элемента в список
 void addVisitor(Visitor& newVisitor);
 
-// Функция для редактирования элемента по ключу documentNumber
-void editVisitorByDocumentNumber(const int& visitorId, const Visitor& updatedVisitor);
+// Функция для редактирования элемента по идентификатору
+void editVisitorById(const int& visitorId, const Visitor& updatedVisitor);
 
-// Функция для удаления элемента по ключу documentNumber
-void removeVisitorByDocumentNumber(const int& visitorId);
+// Функция для удаления элемента по идентификатору
+void removeVisitorById(const int& visitorId);
 
 #endif

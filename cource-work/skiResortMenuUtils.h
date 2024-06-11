@@ -5,7 +5,7 @@
 
 using namespace std;
 
-string checkDocumentNumber();
+//string checkDocumentNumber();
 
 string fillingRentalKit();
 
@@ -16,6 +16,8 @@ time_t checkTimeNow();
 time_t checkRentalPeriodEnd(int& rentalTime, time_t& rentalPeriodStart);
 
 void fillingNewVisitor();
+
+void updateVisitor();
 
 void deleteVisitor();
 

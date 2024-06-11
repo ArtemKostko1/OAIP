@@ -8,23 +8,23 @@
 
 using namespace std;
 
-string checkDocumentNumber() {
-	string documentNumber;
-	bool exit;
-	do {
-		exit = false;
-		cin >> documentNumber;
-		try {
-			getVisitorByDocumentNumber(documentNumber);
-			exit = true;
-			cout << "Посетитель уже существует. Пожалуйста, введите номер документа ещё раз: ";
-		}
-		catch (std::invalid_argument& e) {
-			// Посетитель с данным номером документа не найден, поэтому выходим из цикла
-		}
-	} while (exit);
-	return documentNumber;
-}
+//string checkDocumentNumber() {
+//	string documentNumber;
+//	bool exit;
+//	do {
+//		exit = false;
+//		cin >> documentNumber;
+//		try {
+//			getVisitorByDocumentNumber(documentNumber);
+//			exit = true;
+//			cout << "Посетитель уже существует. Пожалуйста, введите номер документа ещё раз: ";
+//		}
+//		catch (std::invalid_argument& e) {
+//			// Посетитель с данным номером документа не найден, поэтому выходим из цикла
+//		}
+//	} while (exit);
+//	return documentNumber;
+//}
 
 string fillingRentalKit() {
 	int rentalKitChoice;
@@ -118,7 +118,8 @@ void fillingNewVisitor() {
 	cin >> visitor.footSize;
 
 	cout << "Введите номер документа: ";
-	visitor.documentNumber = checkDocumentNumber();
+	//visitor.documentNumber = checkDocumentNumber();
+	cin >> visitor.documentNumber;
 
 	cout << "Введите номер телефона: ";
 	cin >> visitor.phoneNumber;
@@ -136,12 +137,16 @@ void fillingNewVisitor() {
 	addVisitor(visitor);
 }
 
+void updateVisitor() {
+
+}
+
 void deleteVisitor() {
 	system("cls");
 	int visitorId;
 	cout << "Введите номер документа посетителя, которого хотите удалить: ";
 	cin >> visitorId;
-	removeVisitorByDocumentNumber(visitorId);
+	removeVisitorById(visitorId);
 }
 
 void displayVisitors() {

@@ -60,8 +60,8 @@ void addVisitor(Visitor& newVisitor) {
 
 }
 
-// Функция для редактирования элемента по номеру документа
-void editVisitorByDocumentNumber(const int& visitorId, const Visitor& updatedVisitor) {
+// Функция для редактирования элемента по идентификатору
+void editVisitorById(const int& visitorId, const Visitor& updatedVisitor) {
 	for (auto& visitor : globalVisitors) {
 		if (visitor.id == visitorId) {
 			visitor = updatedVisitor;
@@ -70,8 +70,8 @@ void editVisitorByDocumentNumber(const int& visitorId, const Visitor& updatedVis
 	}
 }
 
-// Функция для удаления элемента по номеру документа
-void removeVisitorByDocumentNumber(const int& visitorId) {
+// Функция для удаления элемента по идентификатору
+void removeVisitorById(const int& visitorId) {
 	globalVisitors.erase(remove_if(globalVisitors.begin(), globalVisitors.end(),
 		[&visitorId](const Visitor& visitor) {
 			return visitor.id == visitorId;
