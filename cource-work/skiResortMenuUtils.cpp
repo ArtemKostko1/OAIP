@@ -134,19 +134,82 @@ void fillingNewVisitor() {
 
 	visitor.rentalPeriodEnd = checkRentalPeriodEnd(visitor.rentalTime, visitor.rentalPeriodStart);
 
-	addVisitor(visitor);
+	createVisitor(visitor);
+}
+
+void fillingUpdatedVisitor(const int& id, Visitor& visitor) {
+	system("cls");
+
+	cout << "Введите имя: ";
+	cin >> visitor.name;
+
+	cout << "Введите рост (см): ";
+	cin >> visitor.height;
+
+	cout << "Введите вес (кг): ";
+	cin >> visitor.weight;
+
+	cout << "Введите размер обуви (EU): ";
+	cin >> visitor.footSize;
+
+	cout << "Введите номер документа: ";
+	//visitor.documentNumber = checkDocumentNumber();
+	cin >> visitor.documentNumber;
+
+	cout << "Введите номер телефона: ";
+	cin >> visitor.phoneNumber;
+
+	cout << "Выберите тип оборудования (1 - Лыжный комплект, 2 - Комплект для сноуборда): ";
+	visitor.rentalKit = fillingRentalKit();
+
+	cout << "Выберите время аренды (1 - 2 часа, 2 - 4 часа, 3 - 6 часов, 4 - весь день (с 12:00 до 22:00)): ";
+	visitor.rentalTime = fillingRentalTime();
+
+	visitor.rentalPeriodEnd = checkRentalPeriodEnd(visitor.rentalTime, visitor.rentalPeriodStart);
+
+	updateVisitor(id, visitor);
 }
 
 void updateVisitor() {
+	bool updateVisitorExit = false;
+	while (!updateVisitorExit)
+	{
+		system("cls");
+		int id;
+		cout << "Введите идентификатор посетителя, которого хотите отредактировать: ";
+		cin >> id;
 
+		try {
+			Visitor& visitor = getVisitorById(id);
+			fillingUpdatedVisitor(id, visitor);
+			updateVisitorExit = true;
+		}
+		catch (invalid_argument& e) {
+			cout << e.what();
+			this_thread::sleep_for(chrono::milliseconds(1500));
+		}
+	}
 }
 
 void deleteVisitor() {
-	system("cls");
-	int visitorId;
-	cout << "Введите номер документа посетителя, которого хотите удалить: ";
-	cin >> visitorId;
-	removeVisitorById(visitorId);
+	bool deleteVisitorExit = false;
+	while (!deleteVisitorExit)
+	{
+		system("cls");
+		int visitorId;
+		cout << "Введите идентификатор посетителя, которого хотите удалить: ";
+		cin >> visitorId;
+
+		try {
+			getVisitorById(visitorId);
+			deleteVisitor(visitorId);
+			deleteVisitorExit = true;
+		}
+		catch (invalid_argument& e) {
+			cout << e.what();
+			this_thread::sleep_for(chrono::milliseconds(1500));
+		}
+	}
 }
 
 void displayVisitors() {
@@ -156,16 +219,27 @@ void displayVisitors() {
 		system("cls");
 		cout << "СПИСОК ВСЕХ ПОСЕТИТЕЛЕЙ \n" << endl;
 		printVisitorList();
-		cout << "Введите 0 для выхода: ";
 
-		int input;
-		if (cin >> input && input == 0)
-		{
+		cout << "................................................." << endl;
+		cout << "1. Поиск" << endl;
+		cout << "2. Сортировка" << endl;
+		cout << "0. Выход" << endl;
+		cout << "................................................." << endl;
+		cout << "Выберите пункт меню: ";
+		int choice;
+		cin >> choice;
+
+		switch (choice) {
+		case 1:
+			// вызов функции поиска
+			break;
+		case 2:
+			// вызов функции сортировки
+			break;
+		case 0:
 			visitorListExit = true;
 			break;
-		}
-		else
-		{
+		default:
 			cout << "Неверный ввод. Ожидайте..." << endl;
 			cin.clear(); // Очистка ошибочного состояния ввода
 			cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Очистка буфер ввода

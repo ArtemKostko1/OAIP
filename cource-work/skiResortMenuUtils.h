@@ -5,16 +5,6 @@
 
 using namespace std;
 
-//string checkDocumentNumber();
-
-string fillingRentalKit();
-
-int fillingRentalTime();
-
-time_t checkTimeNow();
-
-time_t checkRentalPeriodEnd(int& rentalTime, time_t& rentalPeriodStart);
-
 void fillingNewVisitor();
 
 void updateVisitor();

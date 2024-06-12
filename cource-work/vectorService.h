@@ -16,16 +16,19 @@ vector<Visitor>& getAllVisitors();
 // Функция для получения элемента по номеру документа
 Visitor& getVisitorByDocumentNumber(const string& documentNumber);
 
+// Функция для получения элемента по идентификатору
+Visitor& getVisitorById(const int& visitorId);
+
 // Функция для вывода на консоль всех элементов списка
 void printVisitorList();
 
 // Функция для добавления нового элемента в список
-void addVisitor(Visitor& newVisitor);
+void createVisitor(Visitor& newVisitor);
 
 // Функция для редактирования элемента по идентификатору
-void editVisitorById(const int& visitorId, const Visitor& updatedVisitor);
+void updateVisitor(const int& visitorId, const Visitor& updatedVisitor);
 
 // Функция для удаления элемента по идентификатору
-void removeVisitorById(const int& visitorId);
+void deleteVisitor(const int& visitorId);
 
 #endif

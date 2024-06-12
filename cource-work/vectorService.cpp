@@ -44,6 +44,16 @@ Visitor& getVisitorByDocumentNumber(const string& documentNumber) {
 	throw invalid_argument("Посетитель с данным номером документа не найден");
 }
 
+// Функция для получения элемента по идентификатору
+Visitor& getVisitorById(const int& visitorId) {
+	for (Visitor& visitor : globalVisitors) {
+		if (visitor.id == visitorId) {
+			return visitor;
+		}
+	}
+	throw invalid_argument("Посетитель с данным идентификатором не найден. Ожидайте...");
+}
+
 // Функция для вывода на консоль всех элементов списка
 void printVisitorList() {
 	for (const auto& visitorItem : globalVisitors) {
@@ -52,7 +62,7 @@ void printVisitorList() {
 }
 
 // Функция для добавления нового элемента в список
-void addVisitor(Visitor& newVisitor) {
+void createVisitor(Visitor& newVisitor) {
 	// Установка идентификатора новому элементу и изменение глобального максимального id
 	newVisitor.id = ++autoIncrement;
 
@@ -61,7 +71,7 @@ void addVisitor(Visitor& newVisitor) {
 }
 
 // Функция для редактирования элемента по идентификатору
-void editVisitorById(const int& visitorId, const Visitor& updatedVisitor) {
+void updateVisitor(const int& visitorId, const Visitor& updatedVisitor) {
 	for (auto& visitor : globalVisitors) {
 		if (visitor.id == visitorId) {
 			visitor = updatedVisitor;
@@ -71,7 +81,7 @@ void editVisitorById(const int& visitorId, const Visitor& updatedVisitor) {
 }
 
 // Функция для удаления элемента по идентификатору
-void removeVisitorById(const int& visitorId) {
+void deleteVisitor(const int& visitorId) {
 	globalVisitors.erase(remove_if(globalVisitors.begin(), globalVisitors.end(),
 		[&visitorId](const Visitor& visitor) {
 			return visitor.id == visitorId;
