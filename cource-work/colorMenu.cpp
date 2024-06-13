@@ -17,7 +17,7 @@ void colorMenu() {
         cout << "3. Черный фон, синий текст" << endl;
         cout << "4. Черный фон, красный текст" << endl;
         cout << "5. Зеленый фон, красный текст" << endl;
-        cout << "6. Выход" << endl;
+        cout << "0. Выход" << endl;
         cout << "................................................." << endl;
         cout << "Выберите цветовую политру: ";
         cin >> choice;
@@ -38,7 +38,7 @@ void colorMenu() {
         case 5:
             system("color 20"); // Зеленый фон, красный текст
             break;
-        case 6:
+        case 0:
             exit = true;
             break;
         default:

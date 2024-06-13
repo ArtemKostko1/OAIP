@@ -35,14 +35,14 @@ vector<Visitor>& getAllVisitors() {
 }
 
 // Функция для получения элемента по номеру документа
-Visitor& getVisitorByDocumentNumber(const string& documentNumber) {
-	for (Visitor& visitor : globalVisitors) {
-		if (visitor.documentNumber == documentNumber) {
-			return visitor;
-		}
-	}
-	throw invalid_argument("Посетитель с данным номером документа не найден");
-}
+//Visitor& getVisitorByDocumentNumber(const string& documentNumber) {
+//	for (Visitor& visitor : globalVisitors) {
+//		if (visitor.documentNumber == documentNumber) {
+//			return visitor;
+//		}
+//	}
+//	throw invalid_argument("Посетитель с данным номером документа не найден");
+//}
 
 // Функция для получения элемента по идентификатору
 Visitor& getVisitorById(const int& visitorId) {
@@ -56,8 +56,13 @@ Visitor& getVisitorById(const int& visitorId) {
 
 // Функция для вывода на консоль всех элементов списка
 void printVisitorList() {
-	for (const auto& visitorItem : globalVisitors) {
-		cout << visitorItem.toString() << "\n" << endl;
+	if (globalVisitors.size() > 0) {
+		for (const auto& visitorItem : globalVisitors) {
+			cout << visitorItem.toString() << "\n" << endl;
+		}
+	}
+	else {
+		cout << "Список пуст \n" << endl;
 	}
 }
 

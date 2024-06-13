@@ -1,5 +1,2 @@
-﻿  skiResortMenuUtils.cpp
-D:\BSUIR\ОАиП\Задания и сессия\1 курс\OAIP\cource-work\skiResortMenuUtils.cpp(22,33): warning C4101: e: неиспользованная локальная переменная
-D:\BSUIR\ОАиП\Задания и сессия\1 курс\OAIP\cource-work\skiResortMenuUtils.cpp(39,1): warning C4715: fillingRentalKit: значение возвращается не при всех путях выполнения
-D:\BSUIR\ОАиП\Задания и сессия\1 курс\OAIP\cource-work\skiResortMenuUtils.cpp(60,1): warning C4715: fillingRentalTime: значение возвращается не при всех путях выполнения
+﻿  fileService.cpp
   cource-work.vcxproj -> D:\BSUIR\ОАиП\Задания и сессия\1 курс\OAIP\cource-work\x64\Debug\cource-work.exe

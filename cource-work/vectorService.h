@@ -14,7 +14,7 @@ void setAllVisitors(const vector<Visitor>& visitors);
 vector<Visitor>& getAllVisitors();
 
 // Функция для получения элемента по номеру документа
-Visitor& getVisitorByDocumentNumber(const string& documentNumber);
+//Visitor& getVisitorByDocumentNumber(const string& documentNumber);
 
 // Функция для получения элемента по идентификатору
 Visitor& getVisitorById(const int& visitorId);

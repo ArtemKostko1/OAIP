@@ -11,4 +11,6 @@ void readVisitorsFromFile();
 
 void writeVisitorsToFile();
 
+void writeResultToFile(const vector<Visitor>& visitors);
+
 #endif

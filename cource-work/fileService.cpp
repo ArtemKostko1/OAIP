@@ -13,7 +13,8 @@
 
 using namespace std;
 
-const string fileName = "visitorsList.txt";
+const string fileName = "_visitorsList.txt";
+const string resultFileName = "_resultList.txt";
 
 // Функция для считывания данных из файла
 void readVisitorsFromFile() {
@@ -113,5 +114,49 @@ void writeVisitorsToFile() {
     }
     else {
         cerr << "Error writing to file: " << fileName << endl;
+    }
+}
+
+// Функция для записи результатов поиска, сортировки и индивидуального задания
+void writeResultToFile(const vector<Visitor>& visitors) {
+    ofstream outputFile(resultFileName);
+    if (outputFile.is_open()) {
+        for (const auto& visitor : visitors) {
+            outputFile
+                << visitor.id << endl
+                << visitor.name << endl
+                << visitor.height << endl
+                << visitor.weight << endl
+                << visitor.footSize << endl
+                << visitor.documentNumber << endl
+                << visitor.phoneNumber << endl
+                << visitor.rentalKit << endl
+                << visitor.rentalTime << endl;
+
+            // Преобразование и запись в файл полей rentalPeriodStart и rentalPeriodEnd
+            char buffer[80];
+            struct tm* timeinfo;
+
+            timeinfo = localtime(&visitor.rentalPeriodStart);
+            strftime(buffer, 80, "%d.%m.%Y %H:%M:%S", timeinfo);
+            outputFile << buffer << endl;
+
+            timeinfo = localtime(&visitor.rentalPeriodEnd);
+            strftime(buffer, 80, "%d.%m.%Y %H:%M:%S", timeinfo);
+            outputFile << buffer << endl;
+
+            outputFile << "***" << endl; // Разделитель
+        }
+        outputFile.close();
+    }
+    else {
+        cerr << "Ошибка при открытии файла: " << resultFileName << endl;
+        cerr << "Попытка создания нового файла..." << resultFileName << endl;
+
+        ofstream createdFile(resultFileName);
+        if (!createdFile) {
+            cerr << "Ошибка при создании файла: " << resultFileName << endl;
+        }
+        createdFile.close();
     }
 }
