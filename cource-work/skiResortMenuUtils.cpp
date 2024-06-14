@@ -125,6 +125,22 @@ time_t checkRentalPeriodEnd(int& rentalTime, time_t& rentalPeriodStart) {
 	return mktime(rpeTimeInfo);
 }
 
+float checkFloatInput(const string& prompt) {
+	float value;
+	while (true) {
+		cout << prompt;
+		if (cin >> value) {
+			return value;
+		}
+		else {
+			cout << "Ќеверный ввод. ќжидайте..." << endl;
+			cin.clear(); // ќчистка ошибочного состо€ни€ ввода
+			cin.ignore(numeric_limits<streamsize>::max(), '\n'); // ќчистка буфер ввода
+			this_thread::sleep_for(chrono::milliseconds(1500)); // «адержка приложени€, чтобы пользователь увидел сообщение об ошибке
+		}
+	}
+}
+
 void fillingNewVisitor() {
 	system("cls");
 	Visitor visitor;
@@ -132,14 +148,11 @@ void fillingNewVisitor() {
 	cout << "¬ведите им€: ";
 	cin >> visitor.name;
 
-	cout << "¬ведите рост (см): ";
-	cin >> visitor.height;
+	visitor.height = checkFloatInput("¬ведите рост (см): ");
 
-	cout << "¬ведите вес (кг): ";
-	cin >> visitor.weight;
+	visitor.weight = checkFloatInput("¬ведите вес (кг): ");
 
-	cout << "¬ведите размер обуви (EU): ";
-	cin >> visitor.footSize;
+	visitor.footSize = checkFloatInput("¬ведите размер обуви (EU): ");
 
 	cout << "¬ведите номер документа: ";
 	//visitor.documentNumber = checkDocumentNumber();
@@ -167,14 +180,11 @@ void fillingUpdatedVisitor(const int& id, Visitor& visitor) {
 	cout << "¬ведите им€: ";
 	cin >> visitor.name;
 
-	cout << "¬ведите рост (см): ";
-	cin >> visitor.height;
+	visitor.height = checkFloatInput("¬ведите рост (см): ");
 
-	cout << "¬ведите вес (кг): ";
-	cin >> visitor.weight;
+	visitor.weight = checkFloatInput("¬ведите вес (кг): ");
 
-	cout << "¬ведите размер обуви (EU): ";
-	cin >> visitor.footSize;
+	visitor.footSize = checkFloatInput("¬ведите размер обуви (EU): ");
 
 	cout << "¬ведите номер документа: ";
 	//visitor.documentNumber = checkDocumentNumber();
