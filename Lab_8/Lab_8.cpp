@@ -1,12 +1,8 @@
 ﻿#include <iostream>
 #include <sstream>
-#include <stack>
-#include <vector>
-#include <cstdlib>
-#include <ctime>
+#include <string>
 
 using namespace std;
-
 
 // Функция для ввода значений с обработкой на целое число
 int inputInteger() {
@@ -58,73 +54,61 @@ int inputPositive() {
     return value;
 }
 
-// Функция для создания стека со случайными числами
-stack<int> createStack(int size) {
-    srand(time(0));
-    stack<int> s;
-    for (int i = 0; i < size; i++) {
-        s.push(rand() % 100 - 50); // Генерация случайных чисел от -50 до 49
+// Обычная функция для вычисления факториала
+int factorial(int n) {
+    int result = 1;
+    for (int i = 1; i <= n; i++) {
+        result *= i;
     }
-    return s;
+    return result;
 }
 
-// Функция для печати стека
-void printStack(stack<int> s) {
-    while (!s.empty()) {
-        cout << s.top() << " ";
-        s.pop();
-    }
-    cout << endl;
+// Рекурсивная функция для вычисления факториала
+int factorialRecursive(int n) {
+    if (n <= 0)
+        return 1;
+    else
+        return n * factorialRecursive(n - 1);
 }
 
-// Функция для сортировки стека путем обмена информацией
-stack<int> sortStack(stack<int> s) {
-    vector<int> v;
-    while (!s.empty()) {
-        v.push_back(s.top());
-        s.pop();
-    }
-    sort(v.begin(), v.end());
-    for (int i = 0; i < v.size(); i++) {
-        s.push(v[i]);
-    }
-    return s;
-}
+// Функция для вычисления биномиального коэффициента
+int binomialCoeff(int n, int k, int choice) {
+    int factN, factK, factNK;
 
-// Функция для удаления каждого второго элемента из стека
-stack<int> removeEverySecond(stack<int> s) {
-    stack<int> temp;
-    int index = 0;
-    while (!s.empty()) {
-        if (index % 2 == 0) {
-            temp.push(s.top());
-        }
-        s.pop();
-        index++;
+    if (choice == 1) {
+        factN = factorial(n);
+        factK = factorial(k);
+        factNK = factorial(n - k);
     }
-    return temp;
+    else if (choice == 2) {
+        factN = factorialRecursive(n);
+        factK = factorialRecursive(k);
+        factNK = factorialRecursive(n - k);
+    }
+
+    return factN / (factK * factNK);
 }
 
 int main()
 {
-    int size;
-    cout << "Введите размер стека: ";
-    size = inputPositive();
+    setlocale(LC_ALL, "ru_RU"); //Символы русского алфавита в консоли
 
-    stack<int> stack = createStack(size);
+    int n, k, choice;
 
-    cout << "Исходный стек: ";
-    printStack(stack);
+    cout << "Введите n: ";
+    n = inputPositive();
+    cout << "Введите k: ";
+    k = inputPositive();
 
-    stack = sortStack(stack);
+    cout << "Выберите способ вычисления (1 - обычная ф-я, 2 - рекурсивная ф-я): ";
 
-    cout << "Отсортированный стек: ";
-    printStack(stack);
+    while (!(cin >> choice) || (choice != 1 && choice != 2)) {
+        cout << "Некорректный выбор. Пожалуйста, введите 1 или 2: ";
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    }
 
-    stack = removeEverySecond(stack);
-
-    cout << "Стек после удаления каждого второго элемента: ";
-    printStack(stack);
+    cout << "Биномиальный коэффициент C = " << binomialCoeff(n, k, choice);
 
     return 0;
 }
