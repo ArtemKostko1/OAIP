@@ -596,7 +596,7 @@ void displayIndividualTask() {
 	while (!individualTaskExit)
 	{
 		system("cls");
-		cout << "ÎÒÑÎÐÒÈÐÎÂÀÍÍÛÉ ÑÏÈÑÎÊ ÏÎÑÅÒÈÒÅËÅÉ \n" << endl;
+		cout << "ÑÏÈÑÎÊ ÏÎÑÅÒÈÒÅËÅÉ Ñ ÊÎÌÏËÅÊÒÎÌ ÄËß ÑÍÎÓÁÎÐÄÀ Ó ÊÎÒÎÐÛÕ ÅÙÅ ÄÅÉÑÒÂÓÅÒ ÀÐÅÍÄÀ \n" << endl;
 		cout << ".................................................\n" << endl;
 
 		vector<Visitor> sortResult = individualTask();

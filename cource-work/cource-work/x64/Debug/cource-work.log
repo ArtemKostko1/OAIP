@@ -1,2 +1,8 @@
-﻿  fileService.cpp
+﻿  skiResortMenuUtils.cpp
+D:\BSUIR\ОАиП\Задания и сессия\1 курс\OAIP\cource-work\skiResortMenuUtils.cpp(309,12): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+D:\BSUIR\ОАиП\Задания и сессия\1 курс\OAIP\cource-work\skiResortMenuUtils.cpp(414,53): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+D:\BSUIR\ОАиП\Задания и сессия\1 курс\OAIP\cource-work\skiResortMenuUtils.cpp(461,19): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+D:\BSUIR\ОАиП\Задания и сессия\1 курс\OAIP\cource-work\skiResortMenuUtils.cpp(517,19): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+D:\BSUIR\ОАиП\Задания и сессия\1 курс\OAIP\cource-work\skiResortMenuUtils.cpp(84,1): warning C4715: fillingRentalTime: значение возвращается не при всех путях выполнения
+D:\BSUIR\ОАиП\Задания и сессия\1 курс\OAIP\cource-work\skiResortMenuUtils.cpp(55,1): warning C4715: fillingRentalKit: значение возвращается не при всех путях выполнения
   cource-work.vcxproj -> D:\BSUIR\ОАиП\Задания и сессия\1 курс\OAIP\cource-work\x64\Debug\cource-work.exe
