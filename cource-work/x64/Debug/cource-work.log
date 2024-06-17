@@ -1,15 +1,8 @@
-﻿  colorMenu.cpp
-  cource-work.cpp
-  fileService.cpp
-  mainMenu.cpp
-  skiResortMenuUtils.cpp
-D:\BSUIR\ОАиП\Задания и сессия\OAIP\cource-work\skiResortMenuUtils.cpp(319,12): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
-D:\BSUIR\ОАиП\Задания и сессия\OAIP\cource-work\skiResortMenuUtils.cpp(424,53): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
-D:\BSUIR\ОАиП\Задания и сессия\OAIP\cource-work\skiResortMenuUtils.cpp(471,19): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
-D:\BSUIR\ОАиП\Задания и сессия\OAIP\cource-work\skiResortMenuUtils.cpp(527,19): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
-  vectorService.cpp
-  Создание кода...
-D:\BSUIR\ОАиП\Задания и сессия\OAIP\cource-work\skiResortMenuUtils.cpp(84): warning C4715: fillingRentalTime: значение возвращается не при всех путях выполнения
-D:\BSUIR\ОАиП\Задания и сессия\OAIP\cource-work\skiResortMenuUtils.cpp(55): warning C4715: fillingRentalKit: значение возвращается не при всех путях выполнения
-  LINK : не найден или не выполнена сборка D:\BSUIR\ОАиП\Задания и сессия\OAIP\cource-work\x64\Debug\cource-work.exe при последней инкрементной компоновке; выполняется полная компоновка
+﻿  skiResortMenuUtils.cpp
+D:\BSUIR\ОАиП\Задания и сессия\OAIP\cource-work\skiResortMenuUtils.cpp(304,12): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+D:\BSUIR\ОАиП\Задания и сессия\OAIP\cource-work\skiResortMenuUtils.cpp(409,53): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+D:\BSUIR\ОАиП\Задания и сессия\OAIP\cource-work\skiResortMenuUtils.cpp(456,19): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+D:\BSUIR\ОАиП\Задания и сессия\OAIP\cource-work\skiResortMenuUtils.cpp(512,19): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+D:\BSUIR\ОАиП\Задания и сессия\OAIP\cource-work\skiResortMenuUtils.cpp(69): warning C4715: fillingRentalTime: значение возвращается не при всех путях выполнения
+D:\BSUIR\ОАиП\Задания и сессия\OAIP\cource-work\skiResortMenuUtils.cpp(40): warning C4715: fillingRentalKit: значение возвращается не при всех путях выполнения
   cource-work.vcxproj -> D:\BSUIR\ОАиП\Задания и сессия\OAIP\cource-work\x64\Debug\cource-work.exe

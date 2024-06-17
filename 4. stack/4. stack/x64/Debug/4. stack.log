@@ -1,0 +1,4 @@
+﻿  4. stack.cpp
+C:\МОЕ\бгуир\2 сем\оаип\ЛАБЫ\4. stack\4. stack\4. stack.cpp(137,1): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
+C:\МОЕ\бгуир\2 сем\оаип\ЛАБЫ\4. stack\4. stack\4. stack.cpp(141,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  4. stack.vcxproj -> C:\МОЕ\бгуир\2 сем\оаип\ЛАБЫ\4. stack\x64\Debug\4. stack.exe

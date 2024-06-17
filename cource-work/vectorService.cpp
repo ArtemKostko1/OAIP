@@ -34,16 +34,6 @@ vector<Visitor>& getAllVisitors() {
 	return globalVisitors;
 }
 
-// Функция для получения элемента по номеру документа
-//Visitor& getVisitorByDocumentNumber(const string& documentNumber) {
-//	for (Visitor& visitor : globalVisitors) {
-//		if (visitor.documentNumber == documentNumber) {
-//			return visitor;
-//		}
-//	}
-//	throw invalid_argument("Посетитель с данным номером документа не найден");
-//}
-
 // Функция для получения элемента по идентификатору
 Visitor& getVisitorById(const int& visitorId) {
 	for (Visitor& visitor : globalVisitors) {

@@ -1,0 +1,4 @@
+﻿  Lab_9.cpp
+D:\BSUIR\ОАиП\Задания и сессия\OAIP\Lab_9\Lab_9.cpp(107,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+D:\BSUIR\ОАиП\Задания и сессия\OAIP\Lab_9\Lab_9.cpp(105,24): warning C4101: kod: неиспользованная локальная переменная
+  Lab_9.vcxproj -> D:\BSUIR\ОАиП\Задания и сессия\OAIP\Lab_9\x64\Debug\Lab_9.exe

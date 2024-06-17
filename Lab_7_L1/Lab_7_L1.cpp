@@ -230,7 +230,11 @@ void individualTask() {
 
 		vector<Student>& students = getAllStudents();
 		for (const Student& student : students) {
-			if (student.groupNumber == groupNumberInput && student.gpa > 8.0) {
+			if (
+				student.groupNumber == groupNumberInput && 
+				student.physics >= 9.0 && student.math >= 9.0 && 
+				student.information >= 9.0) 
+			{
 				cout << student.toString() + "\n";
 			}
 		}
@@ -318,4 +322,6 @@ int main()
 	readStudentsFromFile();
 
 	mainMenu();
+
+	return 0;
 }

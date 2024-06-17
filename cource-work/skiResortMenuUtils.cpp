@@ -2,31 +2,16 @@
 #include <iostream>
 #include <chrono>
 #include <ctime>
+#include <sstream>
+#include <string>
 #include <thread>
+#include <iomanip>
 #include <algorithm>
 #include "visitor.h"
 #include "vectorService.h"
 #include "fileService.h"
 
 using namespace std;
-
-//string checkDocumentNumber() {
-//	string documentNumber;
-//	bool exit;
-//	do {
-//		exit = false;
-//		cin >> documentNumber;
-//		try {
-//			getVisitorByDocumentNumber(documentNumber);
-//			exit = true;
-//			cout << "Посетитель уже существует. Пожалуйста, введите номер документа ещё раз: ";
-//		}
-//		catch (invalid_argument& e) {
-//			// Посетитель с данным номером документа не найден, поэтому выходим из цикла
-//		}
-//	} while (exit);
-//	return documentNumber;
-//}
 
 string fillingRentalKit() {
 	int rentalKitChoice;
@@ -640,6 +625,80 @@ void displayIndividualTask() {
 	}
 }
 
+vector<Visitor> additionalTask(time_t startRange, time_t endRange) { // допиши входные параметры startRange и endRange
+	vector<Visitor> globalVisitors = getAllVisitors();
+	vector<Visitor> result;
+
+	// Поиск по критериям
+	for (const Visitor& visitor : globalVisitors) {
+		if (visitor.rentalPeriodStart >= startRange && visitor.rentalPeriodEnd <= endRange) {
+			result.push_back(visitor);
+		}
+	}
+
+	return result;
+}
+
+void displayAdditionalTask() {
+	bool individualTaskExit = false;
+	while (!individualTaskExit)
+	{
+		system("cls");
+		cout << "СПИСОК ПОСЕТИТЕЛЕЙ У КОТОРЫХ ВРЕМЯ АРЕНДЫ ВХОДИТ В ЗАДАННЫЙ ПРОМЕЖУТОК \n" << endl;
+		cout << ".................................................\n" << endl;
+
+		string startRangeStr, endRangeStr;
+		cout << "Введите начало диапазона (dd.mm.yyy hh:mm:ss): ";
+		cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Очистка буфера ввода
+		getline(cin, startRangeStr);
+
+		cout << "Введите окончание диапазона (dd.mm.yyy hh:mm:ss): ";
+		getline(cin, endRangeStr);
+
+		time_t startRange, endRange;
+		tm timeinfo = {};
+		istringstream ss;
+
+		ss.str(startRangeStr);
+		ss >> get_time(&timeinfo, "%d.%m.%Y %H:%M:%S");
+		startRange = mktime(&timeinfo);
+
+		ss.clear();
+		ss.str(endRangeStr);
+		ss >> get_time(&timeinfo, "%d.%m.%Y %H:%M:%S");
+		endRange = mktime(&timeinfo);
+
+		vector<Visitor> sortResult = additionalTask(startRange, endRange);
+		if (sortResult.size() > 0) {
+			for (const Visitor& visitor : sortResult) {
+				cout << visitor.toString() << "\n" << endl;
+			}
+		}
+		else {
+			cout << "Список пуст \n" << endl;
+		}
+
+		writeResultToFile(sortResult);
+
+		cout << "................................................." << endl;
+		cout << "Введите 0 для выхода: ";
+
+		int exitInput;
+		if (cin >> exitInput && exitInput == 0)
+		{
+			individualTaskExit = true;
+			break;
+		}
+		else
+		{
+			cout << "Неверный ввод. Ожидайте..." << endl;
+			cin.clear(); // Очистка ошибочного состояния ввода
+			cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Очистка буфер ввода
+			this_thread::sleep_for(chrono::milliseconds(1500)); // Задержка приложения, чтобы пользователь увидел сообщение об ошибке
+		}
+	}
+}
+
 void displayVisitors() {
 	bool visitorListExit = false;
 	while (!visitorListExit)
@@ -655,6 +714,7 @@ void displayVisitors() {
 		cout << "4. Сортировка выбором" << endl;
 		cout << "5. Сортировка пузырьком" << endl;
 		cout << "6. Индивидуальное задание" << endl;
+		cout << "7. Дополнительное задание" << endl;
 		cout << "0. Выход" << endl;
 		cout << "................................................." << endl;
 		cout << "Выберите пункт меню: ";
@@ -679,6 +739,9 @@ void displayVisitors() {
 			break;
 		case 6:
 			displayIndividualTask();
+			break;
+		case 7:
+			displayAdditionalTask();
 			break;
 		case 0:
 			visitorListExit = true;
