@@ -16,22 +16,24 @@ Tree* createTreeNode(int elementKey, string value) {
 	Tree* tree = new Tree;
 	tree->info = value;
 	tree->key = elementKey;
-	tree->left = tree->right = NULL;
+	tree->left = tree->right = nullptr;
 	return tree;
 }
 
 // Добавление узла дерева с уникальным ключом и значением
 void addElement(Tree* rootTree, int elemtntKey, string value) {
-	Tree* prevTree = NULL, * tree;
+	Tree* prevTree, * tree;
 	bool find = true;
 
 	tree = rootTree;
+	prevTree = tree;
 
 	while (tree && find) {
 		prevTree = tree;
 		if (elemtntKey == tree->key) {
 			find = false;
-			cout << "Ключ должен быть уникальный!";
+			cout << "Ключ должен быть уникальный! Ожидайте...";
+			this_thread::sleep_for(chrono::milliseconds(2500));
 		}
 		else {
 			if (elemtntKey < tree->key)
@@ -55,26 +57,27 @@ Tree* deleteTreeNode(Tree* rootTree, int elementKey) {
 	Tree* Del, * Prev_Del, * R, * Prev_R;
 
 	Del = rootTree;
-	Prev_Del = NULL;
+	Prev_Del = nullptr;
 
-	while (Del != NULL && Del->key != elementKey) {
+	while (Del != nullptr && Del->key != elementKey) {
 		Prev_Del = Del;
 		if (Del->key > elementKey)  Del = Del->left;
 		else Del = Del->right;
 	}
-	if (Del == NULL) {
-		cout << "Ключ не найден";
+	if (Del == nullptr) {
+		cout << "Ключ не найден! Ожидайте...";
+		this_thread::sleep_for(chrono::milliseconds(2500));
 		return rootTree;
 	}
 
-	if (Del->right == NULL) R = Del->left;
+	if (Del->right == nullptr) R = Del->left;
 	else
-		if (Del->left == NULL) R = Del->right;
+		if (Del->left == nullptr) R = Del->right;
 		else {
 
 			Prev_R = Del;
 			R = Del->left;
-			while (R->right != NULL) {
+			while (R->right != nullptr) {
 				Prev_R = R;
 				R = R->right;
 			}
@@ -87,7 +90,7 @@ Tree* deleteTreeNode(Tree* rootTree, int elementKey) {
 		}
 	if (Del == rootTree) rootTree = R;
 	else
-		if (Del->info < Prev_Del->info)
+		if (Del->key < Prev_Del->key)
 			Prev_Del->left = R;
 		else Prev_Del->right = R;
 	delete Del;
@@ -105,11 +108,11 @@ void findTreeNode(Tree* rootTree, int elementKey) {
 
 		Tree* tmp = rootTree;
 
-		while (tmp != NULL && tmp->key != elementKey) {
+		while (tmp != nullptr && tmp->key != elementKey) {
 			if (tmp->key > elementKey)  tmp = tmp->left;
 			else tmp = tmp->right;
 		}
-		if (tmp == NULL)
+		if (tmp == nullptr)
 			cout << "Ключ не найден" << endl;
 		else
 			cout << tmp->info << endl;
@@ -133,182 +136,201 @@ void findTreeNode(Tree* rootTree, int elementKey) {
 	}
 }
 
-	// Удаление дерева рекурсивно по каждому узлу
-	void deleteTree(Tree * tree) {
-		if (tree != NULL) {
-			deleteTree(tree->left);
-			deleteTree(tree->right);
-			delete tree;
+// Удаление дерева рекурсивно по каждому узлу
+void deleteTree(Tree* tree) {
+	if (tree != nullptr) {
+		deleteTree(tree->left);
+		deleteTree(tree->right);
+		delete tree;
+	}
+}
+
+// Обход дерева в префиксном порядке (корень, левое поддерево, правое поддерево)
+void printPreOrder(Tree* rootTree) {
+	if (rootTree != nullptr) {
+		cout << rootTree->key << ": " << rootTree->info << endl;
+		printPreOrder(rootTree->left);
+		printPreOrder(rootTree->right);
+	}
+}
+
+void displayPreOrder(Tree* rootTree) {
+	bool exit = false;
+	while (!exit)
+	{
+		system("cls");
+		cout << "Элементы списка:\n";
+		cout << ".................................................\n" << endl;
+
+		printPreOrder(rootTree);
+
+		cout << "\n................................................." << endl;
+		cout << "Введите 0 для выхода: ";
+
+		int input;
+		if (cin >> input && input == 0)
+		{
+			exit = true;
+			break;
+		}
+		else
+		{
+			cout << "Неверный ввод. Ожидайте..." << endl;
+			cin.clear(); // Очистка ошибочного состояния ввода
+			cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Очистка буфер ввода
+			this_thread::sleep_for(chrono::milliseconds(1500)); // Задержка приложения, чтобы пользователь увидел сообщение об ошибке
 		}
 	}
+}
 
-	void printPreOrder(Tree * rootTree) {
-		if (rootTree != nullptr) {
-			cout << rootTree->key << ": " << rootTree->info << endl;
-			printPreOrder(rootTree->left);
-			printPreOrder(rootTree->right);
+// Обход дерева в постфиксном порядке (левое поддерево, правое поддерево, корень)
+void printPostOrder(Tree* rootTree) {
+	if (rootTree != nullptr) {
+		printPostOrder(rootTree->left);
+		printPostOrder(rootTree->right);
+		cout << rootTree->key << ": " << rootTree->info << endl;
+	}
+}
+
+void displayPostOrder(Tree* rootTree) {
+	bool exit = false;
+	while (!exit)
+	{
+		system("cls");
+		cout << "Элементы списка:\n";
+		cout << ".................................................\n" << endl;
+
+		printPostOrder(rootTree);
+
+		cout << "\n................................................." << endl;
+		cout << "Введите 0 для выхода: ";
+
+		int input;
+		if (cin >> input && input == 0)
+		{
+			exit = true;
+			break;
+		}
+		else
+		{
+			cout << "Неверный ввод. Ожидайте..." << endl;
+			cin.clear(); // Очистка ошибочного состояния ввода
+			cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Очистка буфер ввода
+			this_thread::sleep_for(chrono::milliseconds(1500)); // Задержка приложения, чтобы пользователь увидел сообщение об ошибке
+		}
+	}
+}
+
+// Обход дерева в инфиксном порядке (левое поддерево, корень, правое поддерево)
+void printInOrder(Tree* root) {
+	if (root != nullptr) {
+		printInOrder(root->left);
+		cout << root->key << ": " << root->info << endl;
+		printInOrder(root->right);
+	}
+}
+
+void displayInOrder(Tree* rootTree) {
+	bool exit = false;
+
+	while (!exit)
+	{
+		system("cls");
+		cout << "Элементы списка:\n";
+		cout << ".................................................\n" << endl;
+
+		printInOrder(rootTree);
+
+		cout << "\n................................................." << endl;
+		cout << "Введите 0 для выхода: ";
+
+		int input;
+		if (cin >> input && input == 0)
+		{
+			exit = true;
+			break;
+		}
+		else
+		{
+			cout << "Неверный ввод. Ожидайте..." << endl;
+			cin.clear(); // Очистка ошибочного состояния ввода
+			cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Очистка буфер ввода
+			this_thread::sleep_for(chrono::milliseconds(1500)); // Задержка приложения, чтобы пользователь увидел сообщение об ошибке
+		}
+	}
+}
+
+void displayTree(Tree* rootTree) {
+	bool displayTreeExit = false;
+	int choice;
+	while (!displayTreeExit) {
+		system("cls");
+		cout << "................................................." << endl;
+		cout << "1. Прямой обход (корень, лево, право)" << endl;
+		cout << "2. Обратный обход (лево, право, корень)" << endl;
+		cout << "3. В порядке возрастания ключа (лево, корень, право)" << endl;
+		cout << "0. Выход" << endl;
+		cout << "................................................." << endl;
+		cout << "Выберите пункт меню: ";
+		cin >> choice;
+
+		switch (choice)
+		{
+		case 1:
+			displayPreOrder(rootTree);
+			break;
+		case 2:
+			displayPostOrder(rootTree);
+			break;
+		case 3:
+			displayInOrder(rootTree);
+			break;
+		case 0:
+			displayTreeExit = true;
+			break;
+		default:
+			cout << "Неверный ввод. Ожидайте..." << endl;
+			cin.clear(); // Очистка ошибочного состояния ввода
+			cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Очистка буфер ввода
+			this_thread::sleep_for(chrono::milliseconds(1500)); // Задержка приложения, чтобы пользователь увидел сообщение об ошибке
+			break;
+		}
+	}
+}
+
+void individualTask(Tree*& rootTree, bool& flag) {
+	if (rootTree != nullptr) {
+		individualTask(rootTree->left, flag);
+
+		if (flag) {
+			// Сохраняем указатель на правое поддерево перед удалением текущего узла
+			Tree* rightSubtree = rootTree->right;
+			rootTree = deleteTreeNode(rootTree, rootTree->key);
+			flag = !flag; // Переключение флага для удаления каждого второго узла
+			// Продолжаем обход с сохраненного правого поддерева
+			individualTask(rightSubtree, flag);
 		}
 		else {
-			cout << "Список пуст" << endl;
+			flag = !flag; // Переключение флага если узел не был удален
+			individualTask(rootTree->right, flag);
 		}
 	}
+}
 
-	// Обход дерева в префиксном порядке (корень, левое поддерево, правое поддерево)
-	void displayPreOrder(Tree * rootTree) {
-		bool exit = false;
-		while (!exit)
-		{
-			system("cls");
-			cout << "Элементы списка:\n";
-			cout << ".................................................\n" << endl;
+// Функция для вызова individualTask
+void deleteEverySecondNode(Tree*& rootTree) {
+	bool flag = false; // Начинаем с первого узла
+	individualTask(rootTree, flag);
 
-			printPreOrder(rootTree);
-
-			cout << "\n................................................." << endl;
-			cout << "Введите 0 для выхода: ";
-
-			int input;
-			if (cin >> input && input == 0)
-			{
-				exit = true;
-				break;
-			}
-			else
-			{
-				cout << "Неверный ввод. Ожидайте..." << endl;
-				cin.clear(); // Очистка ошибочного состояния ввода
-				cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Очистка буфер ввода
-				this_thread::sleep_for(chrono::milliseconds(1500)); // Задержка приложения, чтобы пользователь увидел сообщение об ошибке
-			}
-		}
-	}
-
-	void printPostOrder(Tree * rootTree) {
-		if (rootTree != nullptr) {
-			printPostOrder(rootTree->left);
-			printPostOrder(rootTree->right);
-			cout << rootTree->key << ": " << rootTree->info << endl;
-		}
-		else {
-			cout << "Список пуст" << endl;
-		}
-	}
-
-	// Обход дерева в постфиксном порядке (левое поддерево, правое поддерево, корень)
-	void displayPostOrder(Tree * rootTree) {
-		bool exit = false;
-		while (!exit)
-		{
-			system("cls");
-			cout << "Элементы списка:\n";
-			cout << ".................................................\n" << endl;
-
-			printPostOrder(rootTree);
-
-			cout << "\n................................................." << endl;
-			cout << "Введите 0 для выхода: ";
-
-			int input;
-			if (cin >> input && input == 0)
-			{
-				exit = true;
-				break;
-			}
-			else
-			{
-				cout << "Неверный ввод. Ожидайте..." << endl;
-				cin.clear(); // Очистка ошибочного состояния ввода
-				cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Очистка буфер ввода
-				this_thread::sleep_for(chrono::milliseconds(1500)); // Задержка приложения, чтобы пользователь увидел сообщение об ошибке
-			}
-		}
-	}
-
-	void printInOrder(Tree * rootTree) {
-		if (rootTree != nullptr) {
-			printPostOrder(rootTree->left);
-			printPostOrder(rootTree->right);
-			cout << rootTree->key << ": " << rootTree->info << endl;
-		}
-		else {
-			cout << "Список пуст" << endl;
-		}
-	}
-
-	// Обход дерева в инфиксном порядке (левое поддерево, корень, правое поддерево)
-	void displayInOrder(Tree * rootTree) {
-		bool exit = false;
-
-		while (!exit)
-		{
-			system("cls");
-			cout << "Элементы списка:\n";
-			cout << ".................................................\n" << endl;
-
-			printInOrder(rootTree);
-
-			cout << "\n................................................." << endl;
-			cout << "Введите 0 для выхода: ";
-
-			int input;
-			if (cin >> input && input == 0)
-			{
-				exit = true;
-				break;
-			}
-			else
-			{
-				cout << "Неверный ввод. Ожидайте..." << endl;
-				cin.clear(); // Очистка ошибочного состояния ввода
-				cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Очистка буфер ввода
-				this_thread::sleep_for(chrono::milliseconds(1500)); // Задержка приложения, чтобы пользователь увидел сообщение об ошибке
-			}
-		}
-	}
-
-	void displayTree(Tree * rootTree) {
-		bool displayTreeExit = false;
-		int choice;
-		while (!displayTreeExit) {
-			system("cls");
-			cout << "................................................." << endl;
-			cout << "1. Прямой обход" << endl;
-			cout << "2. Обратный обход" << endl;
-			cout << "3. В порядке возрастания ключа" << endl;
-			cout << "0. Выход" << endl;
-			cout << "................................................." << endl;
-			cout << "Выберите пункт меню: ";
-			cin >> choice;
-
-			switch (choice)
-			{
-			case 1:
-				displayPreOrder(rootTree);
-				break;
-			case 2:
-				displayPostOrder(rootTree);
-				break;
-			case 3:
-				displayInOrder(rootTree);
-				break;
-			case 0:
-				displayTreeExit = true;
-				break;
-			default:
-				cout << "Неверный ввод. Ожидайте..." << endl;
-				cin.clear(); // Очистка ошибочного состояния ввода
-				cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Очистка буфер ввода
-				this_thread::sleep_for(chrono::milliseconds(1500)); // Задержка приложения, чтобы пользователь увидел сообщение об ошибке
-				break;
-			}
-		}
-	}
+	cout << "Удаление каждого второго элемента произошло успешно. Ожидайте... ";
+	this_thread::sleep_for(chrono::milliseconds(2500));
+}
 
 	int main()
 	{
 		system("CHCP 1251");
 
-		Tree* rootTree = NULL;
+		Tree* rootTree = nullptr;
 		int choice, elementKey;
 		bool exit = false;
 		string element;
@@ -336,7 +358,7 @@ void findTreeNode(Tree* rootTree, int elementKey) {
 				cout << "Введите ключ элемента: ";
 				cin >> elementKey;
 
-				if (rootTree == NULL)
+				if (rootTree == nullptr)
 					rootTree = createTreeNode(elementKey, element);
 				else
 					addElement(rootTree, elementKey, element);
@@ -361,6 +383,11 @@ void findTreeNode(Tree* rootTree, int elementKey) {
 			case 4:
 			{
 				displayTree(rootTree);
+				break;
+			}
+			case 5:
+			{
+				deleteEverySecondNode(rootTree);
 				break;
 			}
 			case 0:
