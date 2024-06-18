@@ -1,7 +1,0 @@
-﻿  6. trees.cpp
-C:\МОЕ\бгуир\2 сем\оаип\ЛАБЫ\6. trees\6. trees\6. trees.cpp(142,43): warning C4267: +=: преобразование из "size_t" в "_Ty"; возможна потеря данных
-          with
-          [
-              _Ty=int
-          ]
-  6. trees.vcxproj -> C:\МОЕ\бгуир\2 сем\оаип\ЛАБЫ\6. trees\x64\Debug\6. trees.exe
