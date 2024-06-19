@@ -298,9 +298,9 @@ void displayTree(Tree* rootTree) {
 	}
 }
 
-void individualTask(Tree*& rootTree, bool& flag) {
+void additionalTask(Tree*& rootTree, bool& flag) {
 	if (rootTree != nullptr) {
-		individualTask(rootTree->left, flag);
+		additionalTask(rootTree->left, flag);
 
 		if (flag) {
 			// Сохраняем указатель на правое поддерево перед удалением текущего узла
@@ -308,22 +308,73 @@ void individualTask(Tree*& rootTree, bool& flag) {
 			rootTree = deleteTreeNode(rootTree, rootTree->key);
 			flag = !flag; // Переключение флага для удаления каждого второго узла
 			// Продолжаем обход с сохраненного правого поддерева
-			individualTask(rightSubtree, flag);
+			additionalTask(rightSubtree, flag);
 		}
 		else {
 			flag = !flag; // Переключение флага если узел не был удален
-			individualTask(rootTree->right, flag);
+			additionalTask(rootTree->right, flag);
 		}
 	}
 }
 
-// Функция для вызова individualTask
+// Функция для вызова additionalTask
 void deleteEverySecondNode(Tree*& rootTree) {
 	bool flag = false; // Начинаем с первого узла
-	individualTask(rootTree, flag);
+	additionalTask(rootTree, flag);
 
 	cout << "Удаление каждого второго элемента произошло успешно. Ожидайте... ";
 	this_thread::sleep_for(chrono::milliseconds(2500));
+}
+
+int individualTask(Tree*& leftSubtree) {
+	if (leftSubtree == nullptr)
+		return 0;
+
+	int count = 1;
+
+	count += individualTask(leftSubtree->left);
+	count += individualTask(leftSubtree->right);
+
+	return count;
+}
+
+void displayIndividualTask(Tree* rootTree) {
+	bool exit = false;
+
+	while (!exit)
+	{
+		system("cls");
+		cout << "Количество элементов в левой ветви дерева:\n";
+		cout << ".................................................\n" << endl;
+
+		Tree* leftSubtree;
+		if (rootTree != nullptr)
+			leftSubtree = rootTree->left;
+		else
+			leftSubtree = nullptr;
+
+		if (leftSubtree == nullptr)
+			cout << "Вывести невозиожно, список пуст";
+		else
+			cout << individualTask(leftSubtree) << endl;
+
+		cout << "\n................................................." << endl;
+		cout << "Введите 0 для выхода: ";
+
+		int input;
+		if (cin >> input && input == 0)
+		{
+			exit = true;
+			break;
+		}
+		else
+		{
+			cout << "Неверный ввод. Ожидайте..." << endl;
+			cin.clear(); // Очистка ошибочного состояния ввода
+			cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Очистка буфер ввода
+			this_thread::sleep_for(chrono::milliseconds(1500)); // Задержка приложения, чтобы пользователь увидел сообщение об ошибке
+		}
+	}
 }
 
 	int main()
@@ -344,7 +395,8 @@ void deleteEverySecondNode(Tree*& rootTree) {
 			cout << "2. Удалить элемент" << endl;
 			cout << "3. Поиск элемента" << endl;
 			cout << "4. Вывести список" << endl;
-			cout << "5. Решение индивидуального задания" << endl;
+			cout << "5. Решение дополнительного задания" << endl;
+			cout << "6. Решение индивидуального задания" << endl;
 			cout << "0. Выход" << endl;
 			cout << "................................................." << endl;
 			cout << "Выберите пункт меню: ";
@@ -388,6 +440,11 @@ void deleteEverySecondNode(Tree*& rootTree) {
 			case 5:
 			{
 				deleteEverySecondNode(rootTree);
+				break;
+			}
+			case 6:
+			{
+				displayIndividualTask(rootTree);
 				break;
 			}
 			case 0:
